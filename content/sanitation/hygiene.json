@@ -1,0 +1,37 @@
+{
+  "id": "hygiene",
+  "category": "sanitation",
+  "title": "Hygiene",
+  "priority": "important",
+  "offline": true,
+  "last_updated": "2026-06-11",
+  "tags": ["sanitation", "handwashing", "latrine", "disease", "hygiene"],
+  "summary": "Good hygiene reduces illness when water, toilets, and soap are limited.",
+  "sections": [
+    {
+      "heading": "Step 1 — Wash hands without running water",
+      "body": "Use a small amount of clean water with soap if available and rub all hand surfaces for at least 20 seconds. If water is scarce, a handwashing station with a bottle, tap, or pouring container works well. Alcohol-based hand rub can help when hands are not visibly dirty.",
+      "image_description": "A simple tippy-tap handwashing station made from a bottle or container."
+    },
+    {
+      "heading": "Step 2 — Build a safe latrine or cat hole",
+      "body": "In short-term outdoor situations, a small cat hole can work if local rules allow it and the soil drains well. For longer use, a trench or more structured latrine may be safer and more sanitary. Keep waste away from water sources, food areas, and camp paths.",
+      "warning": "Human waste near water can spread disease quickly.",
+      "image_description": "A latrine site marked far from a water source and living area."
+    },
+    {
+      "heading": "Step 3 — Dispose of waste correctly",
+      "body": "Bag and remove trash when possible, and bury only what local guidance permits. Keep contaminated materials away from living space and wash reusable containers after use. Separate medical waste or heavily soiled materials from normal trash when you can.",
+      "image_description": "Trash bags and waste containers marked for disposal away from camp."
+    },
+    {
+      "heading": "Step 4 — Protect menstrual and household hygiene",
+      "body": "Menstrual hygiene matters just like any other hygiene task, especially in survival conditions. Use clean absorbent materials, wash reusable items safely, and dry them thoroughly in the sun when possible. Good hygiene also means cleaning wounds, keeping utensils clean, and reducing contact with feces and wastewater.",
+      "image_description": "A hygiene kit with reusable cloth, soap, water, and drying line."
+    }
+  ],
+  "when_to_use": "Use this guide when normal sanitation systems are unavailable or unreliable.",
+  "do_not": ["Do not put waste near drinking water.", "Do not ignore hand hygiene.", "Do not reuse contaminated cloth without cleaning it."],
+  "sources": ["WHO WASH guidance, 2023", "Red Cross hygiene in emergencies, 2021"],
+  "difficulty": "beginner"
+}

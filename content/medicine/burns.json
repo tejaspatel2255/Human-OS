@@ -1,0 +1,38 @@
+{
+  "id": "burns",
+  "category": "medicine",
+  "title": "Burns",
+  "priority": "critical",
+  "offline": true,
+  "last_updated": "2026-06-11",
+  "tags": ["burns", "first aid", "cooling", "medicine", "wound care"],
+  "summary": "Cool the burn quickly, protect the skin, and know when a burn needs urgent medical help.",
+  "sections": [
+    {
+      "heading": "Step 1 — Identify the burn",
+      "body": "Burns are usually described by depth and by how much skin is affected. Superficial burns cause redness and pain, while deeper burns may look white, brown, leathery, or charred and may not hurt much because nerves are damaged. Any burn on the face, hands, feet, genitals, major joints, or a burn larger than the person's palm deserves careful attention and often needs medical review.",
+      "image_description": "A simple diagram showing shallow, partial-thickness, and full-thickness burns on skin layers."
+    },
+    {
+      "heading": "Step 2 — Cool the burn",
+      "body": "Cool the burn under cool running water for about 20 minutes as soon as possible. This helps stop the heat damage and can reduce pain and swelling. Use cool water, not ice, because ice can further injure the skin and make the tissue damage worse.",
+      "warning": "Do not use butter, oil, toothpaste, or ice on a burn.",
+      "image_description": "A hand held under cool running tap water with a timer showing 20 minutes."
+    },
+    {
+      "heading": "Step 3 — Cover and protect it",
+      "body": "After cooling, gently cover the burn with a clean, non-fluffy cloth or cling film if available. The cover should protect the area without sticking to the wound. If clothing is stuck to the burn, do not pull it off; cut around it instead.",
+      "image_description": "A burn wrapped loosely with clean gauze or cling film."
+    },
+    {
+      "heading": "Step 4 — Know when to seek help",
+      "body": "Get urgent medical help for large burns, deep burns, chemical burns, electrical burns, burns with trouble breathing, or burns with signs of infection such as increasing redness, swelling, pus, or fever. Infants, older adults, and people with chronic illness need lower thresholds for care. If the person feels faint, confused, or unwell after a burn, treat it as urgent.",
+      "warning": "Call emergency services if the burn is severe, the person has trouble breathing, or the burn covers a large area.",
+      "image_description": "A checklist icon next to danger signs like smoke inhalation, large burn area, and infection."
+    }
+  ],
+  "when_to_use": "Use this guide immediately after a thermal burn, scald, or minor flame injury while deciding whether urgent care is needed.",
+  "do_not": ["Do not pop blisters.", "Do not apply ice directly.", "Do not remove stuck clothing.", "Do not use greasy home remedies."],
+  "sources": ["WHO first aid guidance, 2023", "IFRC / Red Cross First Aid Handbook, 2021"],
+  "difficulty": "beginner"
+}

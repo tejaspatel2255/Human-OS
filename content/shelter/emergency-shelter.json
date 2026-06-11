@@ -1,0 +1,38 @@
+{
+  "id": "emergency-shelter",
+  "category": "shelter",
+  "title": "Emergency Shelter",
+  "priority": "critical",
+  "offline": true,
+  "last_updated": "2026-06-11",
+  "tags": ["shelter", "warmth", "insulation", "protection", "survival"],
+  "summary": "Build a shelter that blocks wind, sheds rain, and keeps body heat from being lost to the ground.",
+  "sections": [
+    {
+      "heading": "Step 1 — Choose a safe site",
+      "body": "Pick a site that avoids falling branches, flood channels, rockfall, and exposed wind if possible. Stay away from animal paths, insect nests, and places that could trap cold air or water. A small improvement in safety can matter more than a quick construction site.",
+      "image_description": "A terrain sketch highlighting hazards like flood zones, dead trees, and wind exposure."
+    },
+    {
+      "heading": "Step 2 — Insulate from the ground",
+      "body": "Ground contact can steal heat much faster than air, so insulation from the ground is critical. Use leaves, grass, pine boughs, dry clothing, cardboard, or other dry materials to create a thick sleeping layer. More insulation is better, especially in wet or cold conditions.",
+      "warning": "A shelter without ground insulation can still leave you dangerously cold.",
+      "image_description": "A person lying on a thick bed of leaves and branches inside a shelter."
+    },
+    {
+      "heading": "Step 3 — Build a simple lean-to or debris shelter",
+      "body": "A lean-to uses a frame and a windbreak, while a debris shelter piles natural material over a frame to trap air and block weather. Keep the opening small and face it away from the prevailing wind. If you can, make the structure low and compact so it warms more quickly from body heat.",
+      "image_description": "A lean-to with a slanted roof and windbreak facing away from wind."
+    },
+    {
+      "heading": "Step 4 — Conserve body heat",
+      "body": "Reduce heat loss by staying dry, wearing layers, and covering the head when the environment is cold. Share warmth only if it is safe and appropriate, and keep moving gently if you start to feel chilled. Shelter works best when combined with water, calories, and rest.",
+      "warning": "If the person is shivering intensely, confused, or sleepy, seek warming help urgently.",
+      "image_description": "A sheltered person wrapped in layered clothing with a warm hat and insulated bedding."
+    }
+  ],
+  "when_to_use": "Use this guide when you need temporary protection from cold, wind, rain, or sun.",
+  "do_not": ["Do not build in a flood path.", "Do not sleep directly on bare ground.", "Do not ignore signs of hypothermia."],
+  "sources": ["WHO emergency shelter guidance, 2022", "IFRC / Red Cross disaster shelter guidance, 2021"],
+  "difficulty": "intermediate"
+}

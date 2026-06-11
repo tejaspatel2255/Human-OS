@@ -1,0 +1,38 @@
+{
+  "id": "water-purification",
+  "category": "water",
+  "title": "Water Purification",
+  "priority": "critical",
+  "offline": true,
+  "last_updated": "2026-06-11",
+  "tags": ["water", "boiling", "chlorine", "iodine", "purification"],
+  "summary": "Make suspect water safer with heat, chemicals, sunlight, and basic filtration when needed.",
+  "sections": [
+    {
+      "heading": "Step 1 — Start with the cleanest source",
+      "body": "Choose the clearest water available and let sediment settle if possible. Water that looks clear can still carry germs, so clarity alone does not make it safe. Avoid water that smells strongly of fuel, chemicals, sewage, or algae blooms because treatment may not make it safe enough to drink.",
+      "image_description": "A clear container of water beside muddy water and warning symbols."
+    },
+    {
+      "heading": "Step 2 — Boil when you can",
+      "body": "Boiling is one of the most reliable ways to kill germs in water. Bring water to a rolling boil and keep it boiling for at least one minute; at higher elevations, boil longer if advised by local health guidance. Let it cool in a clean, covered container before drinking.",
+      "warning": "Boiling does not remove chemicals, fuel, or heavy metals.",
+      "image_description": "A pot of water at a rolling boil on a heat source."
+    },
+    {
+      "heading": "Step 3 — Use chemical treatment carefully",
+      "body": "Unflavored household chlorine bleach or water-treatment tablets can disinfect water when used exactly as directed. Different products have different strengths, so the label instructions matter. Iodine can be used in some emergency situations, but it is not suitable for everyone and should be used with care.",
+      "warning": "If you are pregnant, have thyroid disease, or are using chemicals for a long time, seek safer options when possible.",
+      "image_description": "A dropper adding treatment drops to a water bottle with a wait-time icon."
+    },
+    {
+      "heading": "Step 4 — Add simple physical treatment",
+      "body": "A clean cloth can remove some larger particles, and a filter can improve clarity, but filtration alone does not guarantee safe water. Solar disinfection, or SODIS, can help in clear water using sunlight and clear plastic bottles under the right conditions. Combine methods when possible because one step often does not remove all risks.",
+      "image_description": "Clear plastic bottles laid in sunlight beside a cloth filter."
+    }
+  ],
+  "when_to_use": "Use this guide when you need to make questionable water safer for drinking in an emergency.",
+  "do_not": ["Do not trust clear water without treatment.", "Do not mix chemicals blindly.", "Do not drink water that smells like fuel or chemicals."],
+  "sources": ["WHO Guidelines for Drinking-water Quality, 2022", "WHO household water treatment guidance, 2023"],
+  "difficulty": "intermediate"
+}

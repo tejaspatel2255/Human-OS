@@ -1,0 +1,38 @@
+{
+  "id": "mental-health-crisis",
+  "category": "mental-health",
+  "title": "Crisis Support",
+  "priority": "important",
+  "offline": true,
+  "last_updated": "2026-06-11",
+  "tags": ["mental health", "stress", "grounding", "support", "crisis"],
+  "summary": "Reduce acute stress, support others calmly, and know when urgent help is needed.",
+  "sections": [
+    {
+      "heading": "Step 1 — Recognize acute stress reactions",
+      "body": "After a frightening event, people may feel shaky, numb, confused, panicked, or unable to think clearly. These reactions can be normal in the immediate aftermath of a crisis. The priority is safety, calm, and practical support rather than forcing people to explain everything immediately.",
+      "image_description": "A person sitting with supportive body language after a stressful event."
+    },
+    {
+      "heading": "Step 2 — Use grounding techniques",
+      "body": "The 5-4-3-2-1 method can help bring attention back to the present. Name five things you can see, four you can feel, three you can hear, two you can smell, and one you can taste. Slow, steady breathing can also help reduce the feeling of panic and give the body a chance to settle.",
+      "image_description": "A simple five-step grounding list beside calm breathing lines."
+    },
+    {
+      "heading": "Step 3 — Support another person in distress",
+      "body": "Speak calmly, listen without judgment, and help the person find water, a quieter place, or a trusted companion. Offer simple choices instead of overwhelming them with questions. Avoid arguing with what they feel; focus on immediate needs and safety.",
+      "warning": "Do not force someone to talk if they are overwhelmed. Keep your voice calm and your instructions simple.",
+      "image_description": "Two people in a quiet space with one offering water and calm support."
+    },
+    {
+      "heading": "Step 4 — Seek help when risk is high",
+      "body": "Urgent help is needed if someone talks about harming themselves or others, cannot care for basic needs, is severely confused, or seems disconnected from reality. Crisis lines, emergency services, and nearby health professionals are appropriate next steps when danger is immediate. If you are unsure, err on the side of safety and get help.",
+      "warning": "If there is immediate danger, contact emergency services now.",
+      "image_description": "A crisis support flowchart pointing toward emergency help and trusted contacts."
+    }
+  ],
+  "when_to_use": "Use this guide after disasters, frightening events, or when someone is emotionally overwhelmed and needs immediate support.",
+  "do_not": ["Do not minimize the person's distress.", "Do not leave a high-risk person alone.", "Do not promise secrecy if safety is at risk."],
+  "sources": ["WHO Psychological First Aid guidance, 2011", "IFRC / Red Cross psychosocial support guidance, 2020"],
+  "difficulty": "beginner"
+}

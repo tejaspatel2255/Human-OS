@@ -1,0 +1,50 @@
+name: Deploy HumanOS
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 -I{} sh -c 'jq . "{}" > /dev/null && echo OK: "{}"'
+
+      - name: Check locale key counts
+        run: |
+          base_count=$(jq 'keys | length' locales/en.json)
+          for file in locales/*.json; do
+            count=$(jq 'keys | length' "$file")
+            if [ "$count" -lt "$base_count" ]; then
+              echo "Locale $file has fewer keys than locales/en.json"
+              exit 1
+            fi
+          done
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Summary
+        run: |
+          echo "Deployed HumanOS to GitHub Pages." >> "$GITHUB_STEP_SUMMARY"
+          echo "URL: ${{ steps.deployment.outputs.page_url }}" >> "$GITHUB_STEP_SUMMARY"

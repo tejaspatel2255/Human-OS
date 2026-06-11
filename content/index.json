@@ -1,0 +1,14 @@
+{
+  "articles": [
+    { "id": "burns", "category": "medicine", "title": "Burns", "priority": "critical", "tags": ["burns", "first aid", "cooling", "medicine"] },
+    { "id": "choking", "category": "medicine", "title": "Choking", "priority": "critical", "tags": ["choking", "airway", "first aid", "medicine"] },
+    { "id": "purification", "category": "water", "title": "Water Purification", "priority": "critical", "tags": ["water", "boiling", "chlorine", "purification"] },
+    { "id": "finding-water", "category": "water", "title": "Finding Water", "priority": "critical", "tags": ["water", "rain", "dew", "survival"] },
+    { "id": "foraging", "category": "food", "title": "Foraging", "priority": "important", "tags": ["food", "plants", "foraging", "nutrition"] },
+    { "id": "preservation", "category": "food", "title": "Food Preservation", "priority": "important", "tags": ["food", "drying", "smoking", "storage"] },
+    { "id": "emergency-shelter", "category": "shelter", "title": "Emergency Shelter", "priority": "critical", "tags": ["shelter", "warmth", "insulation", "protection"] },
+    { "id": "hygiene", "category": "sanitation", "title": "Hygiene", "priority": "important", "tags": ["sanitation", "handwashing", "latrine", "disease"] },
+    { "id": "mental-health-crisis", "category": "mental-health", "title": "Crisis Support", "priority": "important", "tags": ["mental health", "stress", "grounding", "support"] },
+    { "id": "radio-basics", "category": "communication", "title": "Radio Basics", "priority": "useful", "tags": ["radio", "communication", "distress", "battery"] }
+  ]
+}

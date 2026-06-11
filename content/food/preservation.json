@@ -1,0 +1,38 @@
+{
+  "id": "food-preservation",
+  "category": "food",
+  "title": "Food Preservation",
+  "priority": "important",
+  "offline": true,
+  "last_updated": "2026-06-11",
+  "tags": ["food", "drying", "smoking", "storage", "preservation"],
+  "summary": "Preserve food with drying, salting, smoking, and cool storage to reduce spoilage and waste.",
+  "sections": [
+    {
+      "heading": "Step 1 — Dry or dehydrate food",
+      "body": "Drying removes moisture that bacteria, mold, and yeast need to grow. Slice food into thin, even pieces and dry it with clean air, sun, smoke, or gentle heat when conditions allow. Keep dried food protected from insects, dust, and rehydration from humidity.",
+      "image_description": "Thin strips of food laid on a drying rack in sunlight."
+    },
+    {
+      "heading": "Step 2 — Use salt or smoke when appropriate",
+      "body": "Salt curing helps pull moisture from food and slows spoilage, especially for meat or fish when refrigeration is absent. Smoking can add drying and antimicrobial effects, but it is not a guarantee of safety by itself. Combine methods carefully and keep clean hands and tools throughout the process.",
+      "warning": "Smoking and salting are preservation methods, not a substitute for proper hygiene.",
+      "image_description": "A simple smokehouse and a bowl of salt beside preserved meat."
+    },
+    {
+      "heading": "Step 3 — Store in the coolest safe place",
+      "body": "A root cellar or other cool, dark, ventilated place can help slow spoilage. Keep stored food off the floor and away from pests, moisture, and chemicals. Rotate food so older items are used first.",
+      "image_description": "A cool underground storage space with baskets kept off the floor."
+    },
+    {
+      "heading": "Step 4 — Reject spoiled food",
+      "body": "Any food that smells rotten, looks slimy, shows mold that has spread through soft foods, or has a damaged container should be treated with caution. Swollen cans, leaking packets, and foamy or bubbling liquids are warning signs. When in doubt, throw it out, because food poisoning can quickly worsen a survival situation.",
+      "warning": "Do not taste spoiled food to 'check' if it is safe.",
+      "image_description": "A checklist with spoiled food signs and a crossed-out taste test icon."
+    }
+  ],
+  "when_to_use": "Use this guide when you have food that needs to last longer without refrigeration.",
+  "do_not": ["Do not store food in damp places.", "Do not trust a swollen can.", "Do not preserve food with dirty hands or tools."],
+  "sources": ["WHO food safety manual, 2022", "Red Cross disaster food storage guidance, 2021"],
+  "difficulty": "intermediate"
+}

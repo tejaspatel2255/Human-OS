@@ -1,0 +1,38 @@
+{
+  "id": "foraging",
+  "category": "food",
+  "title": "Foraging",
+  "priority": "important",
+  "offline": true,
+  "last_updated": "2026-06-11",
+  "tags": ["food", "plants", "foraging", "nutrition", "survival"],
+  "summary": "Foraging can help in a crisis, but safe identification and conservative choices are essential.",
+  "sections": [
+    {
+      "heading": "Step 1 — Prioritize calories and safety",
+      "body": "In a survival situation, calories, water, and safety matter more than variety. Focus on easy-to-identify, non-toxic foods first, and conserve energy while gathering them. A small amount of safe food is better than risking poisoning by eating an unknown plant.",
+      "image_description": "A survival kit next to simple safe foods like roots, fruits, and nuts."
+    },
+    {
+      "heading": "Step 2 — Identify plants with confidence",
+      "body": "Use multiple identification features such as leaf shape, stems, flowers, fruit, habitat, and season. Never rely on one feature alone because many plants look alike. If you cannot identify a plant with high confidence, leave it alone.",
+      "warning": "If you are unsure, do not eat it. 'Maybe edible' is not safe in a survival setting.",
+      "image_description": "A plant identification checklist showing leaves, flowers, stems, and habitat."
+    },
+    {
+      "heading": "Step 3 — Avoid universal danger plants and risky mushrooms",
+      "body": "Some plants and fungi are dangerous even in small amounts, and many mushrooms are deadly or cause delayed poisoning. Avoid mushrooms unless you have expert-level identification skills and local knowledge. Plants with milky sap, bitter almonds smell, or unknown berries should also be treated with extreme caution.",
+      "image_description": "A red warning symbol beside a cluster of wild mushrooms and unknown berries."
+    },
+    {
+      "heading": "Step 4 — Understand the universal edibility test limits",
+      "body": "The universal edibility test is often discussed, but it is slow, uncomfortable, and not reliable enough to make dangerous plants safe. It may have a place in extreme emergencies after many better options are exhausted, but it is not a guarantee. Your best protection is positive identification from trusted local knowledge or a reputable field guide.",
+      "warning": "Do not use the universal edibility test on mushrooms or obviously toxic plants.",
+      "image_description": "A caution sign over a step-by-step test chart with a large question mark."
+    }
+  ],
+  "when_to_use": "Use this guide when other food sources are limited and you need to gather wild plant foods carefully.",
+  "do_not": ["Do not eat unknown mushrooms.", "Do not taste-test unrecognized plants casually.", "Do not over-prioritize low-calorie foods when safer calories are available."],
+  "sources": ["IFRC / Red Cross wilderness first aid guidance, 2021", "WHO food safety guidance, 2023"],
+  "difficulty": "advanced"
+}

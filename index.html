@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#00c853">
+  <title>HumanOS — Survival Knowledge</title>
+  <meta name="description" content="HumanOS is an offline survival knowledge app for medicine, water, food, shelter, communication, and emergency support in any language.">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="HumanOS — Survival Knowledge">
+  <meta property="og:description" content="Survival knowledge for every human on Earth. Works offline after first load.">
+  <meta property="og:type" content="website">
+  <script async src="https://cloud.umami.is/script.js" data-website-id="UMAMI_PLACEHOLDER"></script>
+  <script data-goatcounter="https://GOATCOUNTER_PLACEHOLDER.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header" role="banner">
+    <div class="header__brand" aria-label="HumanOS home">
+      <span aria-hidden="true">🌍</span>
+      <span>HumanOS</span>
+    </div>
+    <span id="offline-badge" class="offline-badge" hidden aria-live="polite">● Offline</span>
+    <div class="header__actions">
+      <button id="language-btn" class="globe-button" aria-label="Choose language" type="button">🌐</button>
+      <button id="theme-btn" class="theme-toggle" aria-label="Toggle theme" type="button">🌓</button>
+      <button id="font-btn" class="font-button" aria-label="Change font size" type="button">Aa</button>
+      <button id="settings-btn" class="settings-button" aria-label="Open settings" type="button">⚙️</button>
+    </div>
+  </header>
+
+  <button id="emergency-btn" class="emergency-bar" aria-label="Emergency First Aid" type="button">
+    <span aria-hidden="true">🆘</span> EMERGENCY FIRST AID — TAP HERE
+  </button>
+
+  <main id="main" role="main" class="main">
+    <section id="view-home" class="view">
+      <section id="stats-widget" class="stats-widget" aria-label="Global impact stats">
+        <div class="stats-widget__row">
+          <div class="stat-chip" id="stat-visitors">...</div>
+          <div class="stat-chip" id="stat-countries">...</div>
+          <div class="stat-chip" id="stat-articles">...</div>
+          <div class="stat-chip" id="stat-ai">...</div>
+          <div class="stat-chip" id="stat-stars">...</div>
+        </div>
+      </section>
+
+      <section class="search-bar" aria-label="Search survival guides">
+        <div class="search-input-wrap">
+          <input id="search-input" class="search-input" type="search" placeholder="Search survival guides" aria-label="Search survival guides" role="searchbox">
+        </div>
+        <div id="search-suggestions" role="listbox" aria-live="polite"></div>
+      </section>
+
+      <section class="category-grid" aria-label="Browse categories">
+        <button class="cat-card" data-category="emergency" type="button"><span aria-hidden="true">🆘</span> Emergency</button>
+        <button class="cat-card" data-category="medicine" type="button"><span aria-hidden="true">🩺</span> Medicine</button>
+        <button class="cat-card" data-category="water" type="button"><span aria-hidden="true">💧</span> Water</button>
+        <button class="cat-card" data-category="food" type="button"><span aria-hidden="true">🌾</span> Food</button>
+        <button class="cat-card" data-category="shelter" type="button"><span aria-hidden="true">🏠</span> Shelter</button>
+        <button class="cat-card" data-category="energy" type="button"><span aria-hidden="true">⚡</span> Energy</button>
+        <button class="cat-card" data-category="comms" type="button"><span aria-hidden="true">📡</span> Comms</button>
+        <button class="cat-card" data-category="sanitation" type="button"><span aria-hidden="true">🧼</span> Sanitation</button>
+        <button class="cat-card" data-category="mental-health" type="button"><span aria-hidden="true">🧠</span> Mental Health</button>
+        <button class="cat-card" data-category="plants" type="button"><span aria-hidden="true">🌿</span> Plants</button>
+        <button class="cat-card" data-category="fire" type="button"><span aria-hidden="true">🔥</span> Fire</button>
+        <button class="cat-card" data-category="tools" type="button"><span aria-hidden="true">🛠️</span> Tools</button>
+      </section>
+
+      <section id="personal-stats" class="home-personal-stats" aria-label="Personal stats"></section>
+
+      <button id="download-all-btn" type="button">📥 Download All for Offline</button>
+
+      <div id="download-progress" class="download-progress" hidden>
+        <div id="download-bar" class="download-progress__fill"></div>
+        <p id="download-status" class="download-progress__text"></p>
+      </div>
+    </section>
+
+    <section id="view-category" class="view" hidden>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#" data-nav="home">Home</a>
+        <span aria-hidden="true">›</span>
+        <span id="category-breadcrumb">Category</span>
+      </nav>
+      <h1 id="category-title"></h1>
+      <div id="article-list" role="list"></div>
+    </section>
+
+    <section id="view-article" class="view" hidden>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#" data-nav="home">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="#" data-nav="category" id="article-category-link">Category</a>
+        <span aria-hidden="true">›</span>
+        <span id="article-breadcrumb">Article</span>
+      </nav>
+      <article id="article-content" aria-live="polite"></article>
+      <button id="bookmark-btn" type="button">🔖 Bookmark</button>
+    </section>
+
+    <section id="view-search" class="view" hidden>
+      <div id="search-results" role="list" aria-live="polite"></div>
+      <div id="search-filters" class="filter-chips" aria-label="Search filters">
+        <button class="filter-chip" type="button">Category</button>
+        <button class="filter-chip" type="button">Difficulty</button>
+        <button class="filter-chip" type="button">Priority</button>
+      </div>
+      <div id="search-history"></div>
+    </section>
+  </main>
+
+  <button id="ai-fab" class="ai-trigger" aria-label="Ask AI a survival question" type="button">🤖</button>
+
+  <aside id="ai-panel" class="ai-panel" role="complementary" aria-label="AI Assistant" hidden>
+    <div class="panel-header">
+      <h3>AI Assistant</h3>
+      <button id="ai-close-btn" class="close-button" aria-label="Close AI panel" type="button">✕</button>
+    </div>
+    <div id="ai-messages" class="ai-panel__messages" aria-live="polite"></div>
+    <p class="ai-disclaimer">AI answers are informational only. Always seek professional help.</p>
+    <div id="ai-input-row" class="ai-panel__input-row">
+      <input id="ai-input" type="text" placeholder="Ask a survival question...">
+      <button id="ai-send" type="button">Send</button>
+    </div>
+  </aside>
+
+  <aside id="settings-panel" class="settings-panel" hidden aria-label="Settings">
+    <div class="panel-header">
+      <h3>Settings</h3>
+      <button id="settings-close-btn" class="close-button" aria-label="Close settings panel" type="button">✕</button>
+    </div>
+    <section class="settings-section" aria-label="Display settings">
+      <h2>Display</h2>
+      <div class="settings-row" role="group" aria-label="Theme">
+        <button id="theme-light-btn" type="button">Light</button>
+        <button id="theme-dark-btn" type="button">Dark</button>
+        <button id="theme-contrast-btn" type="button">High Contrast</button>
+      </div>
+      <div class="settings-row" role="group" aria-label="Font size">
+        <button id="font-sm-btn" type="button">S</button>
+        <button id="font-md-btn" type="button">M</button>
+        <button id="font-lg-btn" type="button">L</button>
+        <button id="font-xl-btn" type="button">XL</button>
+      </div>
+    </section>
+    <section class="settings-section" aria-label="Language settings">
+      <h2>Language</h2>
+      <select id="language-select" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="hi">हिंदी</option>
+        <option value="ar">العربية</option>
+        <option value="zh">中文</option>
+        <option value="pt">Português</option>
+        <option value="sw">Kiswahili</option>
+      </select>
+    </section>
+    <section class="settings-section" aria-label="Storage settings">
+      <h2>Storage</h2>
+      <button id="clear-cache-btn" type="button">Clear Cache</button>
+      <div id="storage-usage" aria-live="polite"></div>
+    </section>
+    <section class="settings-section" aria-label="About section">
+      <h2>About</h2>
+      <p>Version <span id="app-version">1.0.0</span></p>
+      <p><a href="https://github.com/username/humanos" target="_blank" rel="noreferrer">GitHub</a></p>
+      <p>License: MIT</p>
+    </section>
+  </aside>
+
+  <div id="lang-picker" hidden role="listbox" aria-label="Language picker">
+    <div class="panel-header" style="grid-column: span 2; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; width: 100%;">
+      <h3>Select Language</h3>
+      <button id="lang-close-btn" class="close-button" aria-label="Close language picker" type="button">✕</button>
+    </div>
+    <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="es">Español</button>
+    <button type="button" data-lang="fr">Français</button>
+    <button type="button" data-lang="hi">हिंदी</button>
+    <button type="button" data-lang="ar">العربية</button>
+    <button type="button" data-lang="zh">中文</button>
+    <button type="button" data-lang="pt">Português</button>
+    <button type="button" data-lang="sw">Kiswahili</button>
+  </div>
+
+  <div id="modal-overlay" class="modal-overlay" hidden></div>
+
+  <script src="/config.js"></script>
+  <script src="/assets/js/db.js"></script>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/search.js"></script>
+  <script src="/assets/js/ai.js"></script>
+  <script src="/assets/js/analytics.js"></script>
+  <script src="/assets/js/stats-widget.js"></script>
+  <script src="/assets/js/app.js"></script>
+ </body>
+</html>
