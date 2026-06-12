@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Lighthouse CI
         run: |
-          lhci autorun --collect.url=http://localhost:4173 --assert.preset=lighthouse:recommended --assert.assertions.performance=0.95 --assert.assertions.accessibility=1.0 --assert.assertions.best-practices=0.95 --assert.assertions.pwa=1.0
+          lhci autorun --collect.staticDistDir=. --assert.preset=lighthouse:recommended --assert.assertions.performance=0.95 --assert.assertions.accessibility=1.0 --assert.assertions.best-practices=0.95 --assert.assertions.pwa=1.0
 
       - name: Upload Lighthouse report
         uses: actions/upload-artifact@v4
