@@ -60,10 +60,20 @@ function renderStatsWidget(stats, isLastKnown = false) {
 }
 
 async function loadPublicStats() {
+  const umamiId = window.CONFIG && window.CONFIG.UMAMI_WEBSITE_ID;
+  const umamiKey = window.CONFIG && window.CONFIG.UMAMI_PUBLIC_KEY;
+  if (!umamiId || !umamiKey || umamiId.includes("PLACEHOLDER") || umamiId.includes("YOUR_")) {
+    const cached = JSON.parse(localStorage.getItem("humanos_last_stats") || "null");
+    if (cached) {
+      renderStatsWidget(cached, true);
+    }
+    return;
+  }
+
   try {
-    const res = await fetch(`https://api.umami.is/v1/websites/${CONFIG.UMAMI_WEBSITE_ID}/stats`, {
+    const res = await fetch(`https://api.umami.is/v1/websites/${umamiId}/stats`, {
       headers: {
-        "x-umami-api-key": CONFIG.UMAMI_PUBLIC_KEY
+        "x-umami-api-key": umamiKey
       }
     });
     if (res.ok) {
@@ -91,8 +101,14 @@ async function loadPublicStats() {
 }
 
 async function loadGitHubStars() {
+  const repo = (window.CONFIG && window.CONFIG.GITHUB_REPO) || "tejaspatel2255/Human-OS";
+  if (!repo || repo.includes("username/")) {
+    const stars = document.getElementById("stat-stars");
+    if (stars) stars.hidden = true;
+    return;
+  }
   try {
-    const res = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO}`);
+    const res = await fetch(`https://api.github.com/repos/${repo}`);
     if (res.ok) {
       const data = await res.json();
       const stars = document.getElementById("stat-stars");

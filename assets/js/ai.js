@@ -9,30 +9,49 @@ const AI_MODELS = [
 const SYSTEM_PROMPT = "You are HumanOS, a survival knowledge assistant.\nAnswer ONLY about: medicine, water, food, shelter, energy,\nsanitation, communication, mental health, emergency survival.\nKeep answers factual, cite WHO/Red Cross sources where relevant.\nFormat answers as simple numbered steps. Maximum 300 words.\nIf asked about anything unrelated to survival, politely decline.";
 
 async function askAI(userQuestion, category) {
-  const apiKey = CONFIG && CONFIG.OPENROUTER_API_KEY;
+  const apiKey = window.CONFIG && window.CONFIG.OPENROUTER_API_KEY;
+  const useServerProxy = !apiKey || apiKey.includes("YOUR_") || apiKey === "";
 
   for (const model of AI_MODELS) {
     try {
       const controller = AbortSignal.timeout(10000);
-      const res = await fetch(AI_ENDPOINT, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "HTTP-Referer": "https://humanos.earth",
-          "X-Title": "HumanOS",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          model,
-          messages: [
-            { role: "system", content: SYSTEM_PROMPT },
-            { role: "user", content: `[Category: ${category}] ${userQuestion}` }
-          ],
-          max_tokens: 500,
-          temperature: 0.3
-        }),
-        signal: controller
-      });
+      let res;
+      if (useServerProxy) {
+        res = await fetch("/api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            model,
+            messages: [
+              { role: "system", content: SYSTEM_PROMPT },
+              { role: "user", content: `[Category: ${category}] ${userQuestion}` }
+            ]
+          }),
+          signal: controller
+        });
+      } else {
+        res = await fetch(AI_ENDPOINT, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "HTTP-Referer": "https://humanos.earth",
+            "X-Title": "HumanOS",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            model,
+            messages: [
+              { role: "system", content: SYSTEM_PROMPT },
+              { role: "user", content: `[Category: ${category}] ${userQuestion}` }
+            ],
+            max_tokens: 500,
+            temperature: 0.3
+          }),
+          signal: controller
+        });
+      }
 
       if (res.ok) {
         const data = await res.json();

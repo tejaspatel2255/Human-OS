@@ -8,8 +8,11 @@ const STAT_FIELD_MAP = {
 
 function queueGoatCounterEvent(eventName) {
   if (navigator.onLine) {
-    const img = new Image();
-    img.src = `https://${CONFIG.GOATCOUNTER_CODE}.goatcounter.com/count?p=/` + encodeURIComponent(eventName);
+    const code = (window.CONFIG && window.CONFIG.GOATCOUNTER_CODE) || "";
+    if (code) {
+      const img = new Image();
+      img.src = `https://${code}.goatcounter.com/count?p=/` + encodeURIComponent(eventName);
+    }
     return;
   }
   if (typeof queueAnalyticsEvent === "function") {
@@ -35,8 +38,11 @@ async function flushAnalyticsQueue() {
   for (const event of queued) {
     if (event.type === "goatcounter") {
       if (navigator.onLine) {
-        const img = new Image();
-        img.src = `https://${CONFIG.GOATCOUNTER_CODE}.goatcounter.com/count?p=/` + encodeURIComponent(event.event);
+        const code = (window.CONFIG && window.CONFIG.GOATCOUNTER_CODE) || "";
+        if (code) {
+          const img = new Image();
+          img.src = `https://${code}.goatcounter.com/count?p=/` + encodeURIComponent(event.event);
+        }
       }
     }
     if (event.type === "umami" && window.umami && typeof window.umami.track === "function") {
