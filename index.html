@@ -58,23 +58,23 @@
       </section>
 
       <section class="category-grid" aria-label="Browse categories">
-        <button class="cat-card" data-category="emergency" type="button"><span aria-hidden="true">🆘</span> Emergency</button>
-        <button class="cat-card" data-category="medicine" type="button"><span aria-hidden="true">🩺</span> Medicine</button>
-        <button class="cat-card" data-category="water" type="button"><span aria-hidden="true">💧</span> Water</button>
-        <button class="cat-card" data-category="food" type="button"><span aria-hidden="true">🌾</span> Food</button>
-        <button class="cat-card" data-category="shelter" type="button"><span aria-hidden="true">🏠</span> Shelter</button>
-        <button class="cat-card" data-category="energy" type="button"><span aria-hidden="true">⚡</span> Energy</button>
-        <button class="cat-card" data-category="comms" type="button"><span aria-hidden="true">📡</span> Comms</button>
-        <button class="cat-card" data-category="sanitation" type="button"><span aria-hidden="true">🧼</span> Sanitation</button>
-        <button class="cat-card" data-category="mental-health" type="button"><span aria-hidden="true">🧠</span> Mental Health</button>
-        <button class="cat-card" data-category="plants" type="button"><span aria-hidden="true">🌿</span> Plants</button>
-        <button class="cat-card" data-category="fire" type="button"><span aria-hidden="true">🔥</span> Fire</button>
-        <button class="cat-card" data-category="tools" type="button"><span aria-hidden="true">🛠️</span> Tools</button>
+        <button class="cat-card" data-category="emergency" type="button"><span aria-hidden="true">🆘</span> <span data-i18n="emergency">Emergency</span></button>
+        <button class="cat-card" data-category="medicine" type="button"><span aria-hidden="true">🩺</span> <span data-i18n="medicine">Medicine</span></button>
+        <button class="cat-card" data-category="water" type="button"><span aria-hidden="true">💧</span> <span data-i18n="water">Water</span></button>
+        <button class="cat-card" data-category="food" type="button"><span aria-hidden="true">🌾</span> <span data-i18n="food">Food</span></button>
+        <button class="cat-card" data-category="shelter" type="button"><span aria-hidden="true">🏠</span> <span data-i18n="shelter">Shelter</span></button>
+        <button class="cat-card" data-category="energy" type="button"><span aria-hidden="true">⚡</span> <span data-i18n="energy">Energy</span></button>
+        <button class="cat-card" data-category="comms" type="button"><span aria-hidden="true">📡</span> <span data-i18n="communication">Comms</span></button>
+        <button class="cat-card" data-category="sanitation" type="button"><span aria-hidden="true">🧼</span> <span data-i18n="sanitation">Sanitation</span></button>
+        <button class="cat-card" data-category="mental-health" type="button"><span aria-hidden="true">🧠</span> <span data-i18n="mental_health">Mental Health</span></button>
+        <button class="cat-card" data-category="plants" type="button"><span aria-hidden="true">🌿</span> <span data-i18n="plants">Plants</span></button>
+        <button class="cat-card" data-category="fire" type="button"><span aria-hidden="true">🔥</span> <span data-i18n="fire">Fire</span></button>
+        <button class="cat-card" data-category="tools" type="button"><span aria-hidden="true">🛠️</span> <span data-i18n="tools">Tools</span></button>
       </section>
 
       <section id="personal-stats" class="home-personal-stats" aria-label="Personal stats"></section>
 
-      <button id="download-all-btn" type="button">📥 Download All for Offline</button>
+      <button id="download-all-btn" type="button">📥 <span data-i18n="download_all">Download All for Offline</span></button>
 
       <div id="download-progress" class="download-progress" hidden>
         <div id="download-bar" class="download-progress__fill"></div>
@@ -84,7 +84,7 @@
 
     <section id="view-category" class="view" hidden>
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="#" data-nav="home">Home</a>
+        <a href="#" data-nav="home" data-i18n="home">Home</a>
         <span aria-hidden="true">›</span>
         <span id="category-breadcrumb">Category</span>
       </nav>
@@ -94,14 +94,14 @@
 
     <section id="view-article" class="view" hidden>
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="#" data-nav="home">Home</a>
+        <a href="#" data-nav="home" data-i18n="home">Home</a>
         <span aria-hidden="true">›</span>
         <a href="#" data-nav="category" id="article-category-link">Category</a>
         <span aria-hidden="true">›</span>
         <span id="article-breadcrumb">Article</span>
       </nav>
       <article id="article-content" aria-live="polite"></article>
-      <button id="bookmark-btn" type="button">🔖 Bookmark</button>
+      <button id="bookmark-btn" type="button">🔖 <span data-i18n="bookmarks">Bookmark</span></button>
     </section>
 
     <section id="view-search" class="view" hidden>
@@ -119,24 +119,24 @@
 
   <aside id="ai-panel" class="ai-panel" role="complementary" aria-label="AI Assistant" hidden>
     <div class="panel-header">
-      <h3>AI Assistant</h3>
+      <h3 data-i18n="ask_ai">AI Assistant</h3>
       <button id="ai-close-btn" class="close-button" aria-label="Close AI panel" type="button">✕</button>
     </div>
     <div id="ai-messages" class="ai-panel__messages" aria-live="polite"></div>
-    <p class="ai-disclaimer">AI answers are informational only. Always seek professional help.</p>
+    <p class="ai-disclaimer" data-i18n="ai_disclaimer">AI answers are informational only. Always seek professional help.</p>
     <div id="ai-input-row" class="ai-panel__input-row">
-      <input id="ai-input" type="text" placeholder="Ask a survival question...">
-      <button id="ai-send" type="button">Send</button>
+      <input id="ai-input" type="text" placeholder="Ask a survival question..." data-i18n-placeholder="ask_ai_placeholder">
+      <button id="ai-send" type="button" data-i18n="send">Send</button>
     </div>
   </aside>
 
   <aside id="settings-panel" class="settings-panel" hidden aria-label="Settings">
     <div class="panel-header">
-      <h3>Settings</h3>
+      <h3 data-i18n="settings">Settings</h3>
       <button id="settings-close-btn" class="close-button" aria-label="Close settings panel" type="button">✕</button>
     </div>
     <section class="settings-section" aria-label="Display settings">
-      <h2>Display</h2>
+      <h2 data-i18n="settings">Settings</h2>
       <div class="settings-row" role="group" aria-label="Theme">
         <button id="theme-light-btn" type="button">Light</button>
         <button id="theme-dark-btn" type="button">Dark</button>
@@ -150,7 +150,7 @@
       </div>
     </section>
     <section class="settings-section" aria-label="Language settings">
-      <h2>Language</h2>
+      <h2 data-i18n="language">Language</h2>
       <select id="language-select" aria-label="Select language">
         <option value="en">English</option>
         <option value="es">Español</option>

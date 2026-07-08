@@ -155,10 +155,14 @@ async function navigateToCategory(categoryId) {
   currentCategoryId = categoryId;
   showView("view-category");
   const meta = categoryMeta[categoryId] || { title: categoryId, emoji: "📁" };
+  const translationKey = categoryId === "comms" ? "communication" 
+                       : categoryId === "mental-health" ? "mental_health" 
+                       : categoryId;
+  const translatedTitle = typeof t === "function" ? t(translationKey) : meta.title;
   const title = $("category-title");
   const crumb = $("category-breadcrumb");
-  if (title) title.textContent = `${meta.emoji} ${meta.title}`;
-  if (crumb) crumb.textContent = meta.title;
+  if (title) title.textContent = `${meta.emoji} ${translatedTitle}`;
+  if (crumb) crumb.textContent = translatedTitle;
 
   const url = new URL(window.location);
   url.searchParams.set("category", categoryId);
@@ -247,7 +251,10 @@ async function navigateToArticle(articleId) {
   const catLink = $("article-category-link");
   if (catLink) {
     const meta = categoryMeta[currentCategoryId] || { title: currentCategoryId, emoji: "📁" };
-    catLink.textContent = meta.title;
+    const translationKey = currentCategoryId === "comms" ? "communication" 
+                         : currentCategoryId === "mental-health" ? "mental_health" 
+                         : currentCategoryId;
+    catLink.textContent = typeof t === "function" ? t(translationKey) : meta.title;
   }
 
   renderArticle(article);
@@ -287,7 +294,8 @@ function renderArticle(article) {
   content.innerHTML = html.join("");
   if (bookmarkBtn) {
     isBookmarked(article.id).then((bookmarked) => {
-      bookmarkBtn.textContent = bookmarked ? "✅ Bookmarked" : "🔖 Bookmark";
+      const btnText = typeof t === "function" ? t("bookmarks") : "Bookmark";
+      bookmarkBtn.textContent = bookmarked ? `✅ ${btnText}` : `🔖 ${btnText}`;
       bookmarkBtn.onclick = () => toggleBookmark(article.id);
     });
   }
@@ -295,14 +303,15 @@ function renderArticle(article) {
 
 async function toggleBookmark(articleId) {
   const bookmarked = await isBookmarked(articleId);
+  const btnText = typeof t === "function" ? t("bookmarks") : "Bookmark";
   if (bookmarked) {
     await removeBookmark(articleId);
     const btn = $("bookmark-btn");
-    if (btn) btn.textContent = "🔖 Bookmark";
+    if (btn) btn.textContent = `🔖 ${btnText}`;
   } else {
     await saveBookmark(articleId);
     const btn = $("bookmark-btn");
-    if (btn) btn.textContent = "✅ Bookmarked";
+    if (btn) btn.textContent = `✅ ${btnText}`;
     updateLocalStats("bookmarks_saved");
   }
 }
