@@ -57,5 +57,7 @@
   "storage_low": "Device storage is low. Some content may not be cached.",
   "github_stars": "people starred this project",
   "category": "Category",
-  "priority": "Priority"
+  "priority": "Priority",
+  "ai_busy": "AI service is temporarily busy or rate-limited. Please wait a few seconds and try again.",
+  "ai_offline_fallback": "You are offline and no cached answer exists. Please browse the static guides below."
 }

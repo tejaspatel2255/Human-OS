@@ -57,5 +57,7 @@
   "storage_low": "L’espace de stockage de l’appareil est faible. Une partie du contenu peut ne pas être mise en cache.",
   "github_stars": "personnes ont mis ce projet en favori",
   "category": "Catégorie",
-  "priority": "Priorité"
+  "priority": "Priorité",
+  "ai_busy": "Le service d'IA est temporairement occupé ou limité. Veuillez patienter quelques secondes et réessayer.",
+  "ai_offline_fallback": "Vous êtes hors ligne et aucune réponse n'est en cache. Veuillez parcourir les guides statiques ci-dessous."
 }

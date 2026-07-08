@@ -57,5 +57,7 @@
   "storage_low": "El almacenamiento del dispositivo es bajo. Es posible que parte del contenido no se almacene en caché.",
   "github_stars": "personas marcaron este proyecto con estrella",
   "category": "Categoría",
-  "priority": "Prioridad"
+  "priority": "Prioridad",
+  "ai_busy": "El servicio de IA está temporalmente ocupado o tiene el límite de velocidad excedido. Espere unos segundos e inténtelo de nuevo.",
+  "ai_offline_fallback": "Está sin conexión y no existe ninguna respuesta guardada. Explore las guías estáticas a continuación."
 }

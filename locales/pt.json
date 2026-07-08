@@ -57,5 +57,7 @@
   "storage_low": "O armazenamento do dispositivo está baixo. Parte do conteúdo pode não ser armazenada em cache.",
   "github_stars": "pessoas deram estrela a este projeto",
   "category": "Categoria",
-  "priority": "Prioridade"
+  "priority": "Prioridade",
+  "ai_busy": "O serviço de IA está temporariamente ocupado ou limitado. Aguarde alguns segundos e tente novamente.",
+  "ai_offline_fallback": "Você está offline e não há resposta armazenada. Navegue pelos guias estáticos abaixo."
 }

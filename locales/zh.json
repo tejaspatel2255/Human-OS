@@ -57,5 +57,7 @@
   "storage_low": "设备存储空间不足。部分内容可能无法缓存。",
   "github_stars": "人给该项目点了星标",
   "category": "类别",
-  "priority": "优先级"
+  "priority": "优先级",
+  "ai_busy": "AI 服务暂时繁忙或受限。请稍等几秒钟后重试。",
+  "ai_offline_fallback": "您当前处于离线状态，且没有缓存的回答。请浏览下方的静态指南。"
 }
