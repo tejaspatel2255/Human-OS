@@ -9,8 +9,11 @@ const AI_MODELS = [
 const SYSTEM_PROMPT = "You are HumanOS, a survival knowledge assistant.\nAnswer ONLY about: medicine, water, food, shelter, energy,\nsanitation, communication, mental health, emergency survival.\nKeep answers factual, cite WHO/Red Cross sources where relevant.\nFormat answers as simple numbered steps. Maximum 300 words.\nIf asked about anything unrelated to survival, politely decline.";
 
 async function askAI(userQuestion, category) {
-  const apiKey = window.CONFIG && window.CONFIG.OPENROUTER_API_KEY;
-  const useServerProxy = !apiKey || apiKey.includes("YOUR_") || apiKey === "";
+  if (!window.CONFIG?.OPENROUTER_API_KEY || window.CONFIG.OPENROUTER_API_KEY === "" || window.CONFIG.OPENROUTER_API_KEY.includes("YOUR_")) {
+    return { answer: "AI is not configured. Add your OpenRouter key to config.js", model: "none" };
+  }
+  const apiKey = window.CONFIG.OPENROUTER_API_KEY;
+  const useServerProxy = false;
 
   for (const model of AI_MODELS) {
     try {

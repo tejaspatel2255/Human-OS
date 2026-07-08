@@ -5,33 +5,41 @@
   "priority": "critical",
   "offline": true,
   "last_updated": "2026-06-11",
-  "tags": ["water", "rain", "dew", "survival", "hydration"],
-  "summary": "Look for water in terrain, weather, and vegetation without taking unnecessary risks.",
+  "tags": ["water", "find", "nature", "wilderness", "survival"],
+  "summary": "How to locate and collect water in various wilderness environments.",
   "sections": [
     {
-      "heading": "Step 1 — Look for likely water signs",
-      "body": "Water often collects in low places, valleys, riverbeds, and areas with greener vegetation. Birds, insects, and animal tracks may point toward water, but do not follow animals into dangerous terrain. If the ground is damp or plants are lush in an otherwise dry area, water may be near the surface.",
-      "image_description": "A terrain sketch showing a valley, greener plants, and animal tracks leading toward water."
+      "heading": "Step 1 — Read Environmental Indicators",
+      "body": "Look for signs of water in the landscape. Animal tracks often lead to water; follow converging trails downhill. Watch for flocks of birds circling low, or swarms of insects. Lush green vegetation in dry areas indicates groundwater is close to the surface.",
+      "warning": "Do not follow carnivore tracks exclusively, as they do not necessarily stay near water.",
+      "image_description": "Lush valley with animal footprints leading downhill"
     },
     {
-      "heading": "Step 2 — Collect rain and dew",
-      "body": "Rainwater is often the cleanest emergency source if collected from a clean surface. Tarp, poncho, or container collection can capture rain quickly during a storm. Early morning dew on cloth or plants can be wiped into a container, but the amount is usually small and should be treated before drinking.",
-      "image_description": "A tarp funneling rain into a bottle and cloth collecting dew at dawn."
+      "heading": "Step 2 — Collect Rainwater and Dew",
+      "body": "Rainwater is generally clean and safe. Suspend a clean tarp or plastic sheet with corners tied to trees, placing a stone in the center to create a funnel. Collect dew in the morning by dragging a clean cotton cloth or bandana through tall grass, then wringing it out into a container.",
+      "warning": "Avoid collecting rainwater from metallic or rusty surfaces, or roofs with asbestos/chemical coatings.",
+      "image_description": "Tarp suspended with a rock in the middle dripping water into a bucket"
     },
     {
-      "heading": "Step 3 — Try seep and shallow collection carefully",
-      "body": "In sandy or gravelly ground near a dry riverbed, a shallow seep may form if you dig carefully. Wait for water to slowly fill in the hole, then collect the clearer water from the top rather than stirring the sediment. Any water collected from the ground should still be purified before drinking.",
-      "warning": "Do not dig in areas that could collapse, flood, or contain contamination from waste or chemicals.",
-      "image_description": "A shallow pit near a riverbed slowly filling with water."
+      "heading": "Step 3 — Build a Transpiration Bag",
+      "body": "Wrap a large, clear plastic bag over a leafy, non-toxic tree branch. Tie the bag opening tightly around the branch with string or tape to seal in moisture. As the leaves sweat (transpire) in the sun, water vapor condenses on the plastic and pools at the lowest point. Drain daily.",
+      "warning": "Ensure the plant is not poisonous (e.g., avoid oleander or eucalyptus) as toxins can contaminate the water.",
+      "image_description": "Clear plastic bag tied around a green tree branch with water pooling at bottom"
     },
     {
-      "heading": "Step 4 — Use judgment and conserve energy",
-      "body": "Search for water during the coolest parts of the day so you lose less sweat. Move safely, mark your route, and avoid exhausting yourself trying to find a source that may not exist. Drink small amounts regularly if water is limited and rest in shade whenever possible.",
-      "image_description": "A person walking at dawn with a water container and map marker."
+      "heading": "Step 4 — Dig in Swales and Dry Beds",
+      "body": "In dry riverbeds, look for green patches or the outside bend of the river where water naturally cuts deepest. Dig a hole 1 to 2 feet deep. Water should begin to seep into the hole. Let the muddy water settle before scooping it out to purify.",
+      "warning": "Seep water must still be purified (boiled or chemically treated) before drinking.",
+      "image_description": "Person digging in dry sand bend with water seeping up"
     }
   ],
-  "when_to_use": "Use this guide when you are away from a reliable water supply and need to locate an emergency source.",
-  "do_not": ["Do not drink from suspicious water without treatment.", "Do not overexert yourself in hot weather.", "Do not dig in unsafe soil or near contamination."],
-  "sources": ["WHO emergency water supply guidance, 2022", "IFRC / Red Cross survival water guidance, 2021"],
-  "difficulty": "beginner"
+  "when_to_use": "When lost or stranded in the wilderness without access to a municipal water supply.",
+  "do_not": [
+    "Drink urine, saltwater, or blood (this increases dehydration)",
+    "Drink water from plants/cacti without positive identification",
+    "Eat snow directly (melt it first to avoid lowering core body temperature)",
+    "Rely solely on finding surface water in arid regions"
+  ],
+  "sources": ["US Army Survival Manual FM 21-76", "SAS Survival Handbook"],
+  "difficulty": "intermediate"
 }

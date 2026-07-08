@@ -7,12 +7,11 @@ const STAT_FIELD_MAP = {
 };
 
 function queueGoatCounterEvent(eventName) {
+  if (!window.CONFIG?.GOATCOUNTER_CODE || window.CONFIG.GOATCOUNTER_CODE.includes("PLACEHOLDER")) { return; }
   if (navigator.onLine) {
-    const code = (window.CONFIG && window.CONFIG.GOATCOUNTER_CODE) || "";
-    if (code) {
-      const img = new Image();
-      img.src = `https://${code}.goatcounter.com/count?p=/` + encodeURIComponent(eventName);
-    }
+    const code = window.CONFIG.GOATCOUNTER_CODE;
+    const img = new Image();
+    img.src = `https://${code}.goatcounter.com/count?p=/` + encodeURIComponent(eventName);
     return;
   }
   if (typeof queueAnalyticsEvent === "function") {

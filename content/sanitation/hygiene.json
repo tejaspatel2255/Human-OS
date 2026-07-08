@@ -1,37 +1,45 @@
 {
   "id": "hygiene",
   "category": "sanitation",
-  "title": "Hygiene",
+  "title": "Hygiene Without Utilities",
   "priority": "important",
   "offline": true,
   "last_updated": "2026-06-11",
-  "tags": ["sanitation", "handwashing", "latrine", "disease", "hygiene"],
-  "summary": "Good hygiene reduces illness when water, toilets, and soap are limited.",
+  "tags": ["sanitation", "hygiene", "latrine", "waste", "cleanliness"],
+  "summary": "How to maintain sanitation, construct emergency latrines, and wash hands without running water.",
   "sections": [
     {
-      "heading": "Step 1 — Wash hands without running water",
-      "body": "Use a small amount of clean water with soap if available and rub all hand surfaces for at least 20 seconds. If water is scarce, a handwashing station with a bottle, tap, or pouring container works well. Alcohol-based hand rub can help when hands are not visibly dirty.",
-      "image_description": "A simple tippy-tap handwashing station made from a bottle or container."
+      "heading": "Step 1 — Build a Tippy-Tap Handwashing Station",
+      "body": "Construct a foot-operated handwashing station using a clean plastic jug, some sticks, and rope. Hang the jug from a horizontal branch. Tie a rope from the jug handle to a stick on the ground (pedal). Stepping on the pedal tips the jug to pour water, avoiding hand contact with the container. Use soap or wood ash.",
+      "warning": "Ensure clean water is used in the tippy-tap and do not touch the nozzle with dirty hands.",
+      "image_description": "A plastic jug hanging from a frame, tipping as a foot presses a stick pedal"
     },
     {
-      "heading": "Step 2 — Build a safe latrine or cat hole",
-      "body": "In short-term outdoor situations, a small cat hole can work if local rules allow it and the soil drains well. For longer use, a trench or more structured latrine may be safer and more sanitary. Keep waste away from water sources, food areas, and camp paths.",
-      "warning": "Human waste near water can spread disease quickly.",
-      "image_description": "A latrine site marked far from a water source and living area."
+      "heading": "Step 2 — Construct a Cat-Hole or Trench Latrine",
+      "body": "Locate your latrine at least 200 feet (60 meters) away from camps, paths, and water sources (lakes, rivers, wells). Dig a trench 1 foot wide, 2-3 feet deep, and as long as needed. After each use, cover waste immediately with a layer of soil, lime, or wood ash to accelerate decomposition and prevent flies.",
+      "warning": "Never locate a latrine uphill from a water source or close to camp sites.",
+      "image_description": "Cross section of a trench latrine showing layers of waste, ash, and soil"
     },
     {
-      "heading": "Step 3 — Dispose of waste correctly",
-      "body": "Bag and remove trash when possible, and bury only what local guidance permits. Keep contaminated materials away from living space and wash reusable containers after use. Separate medical waste or heavily soiled materials from normal trash when you can.",
-      "image_description": "Trash bags and waste containers marked for disposal away from camp."
+      "heading": "Step 3 — Sanitize Eating and Medical Utensils",
+      "body": "Clean plates, cups, and cooking pots after every meal. Wash with clean water and biodegradable soap or wood ash (potassium hydroxide in ash acts as a natural cleaner). Boil metal medical tools or eating utensils in boiling water for at least 15-20 minutes to sterilize them.",
+      "warning": "Do not reuse unwashed utensils, as food residue breeds harmful bacteria rapidly.",
+      "image_description": "Boiling cutlery in a metal pot over an open flame"
     },
     {
-      "heading": "Step 4 — Protect menstrual and household hygiene",
-      "body": "Menstrual hygiene matters just like any other hygiene task, especially in survival conditions. Use clean absorbent materials, wash reusable items safely, and dry them thoroughly in the sun when possible. Good hygiene also means cleaning wounds, keeping utensils clean, and reducing contact with feces and wastewater.",
-      "image_description": "A hygiene kit with reusable cloth, soap, water, and drying line."
+      "heading": "Step 4 — Dispose of Trash and Greywater Safely",
+      "body": "Collect solid organic waste and bury it far from camp to avoid attracting wild animals. For greywater (wash water), dig a small soak pit filled with gravel and sand. Pour greywater through the pit to allow the soil to naturally filter out grease, soap, and food scraps.",
+      "warning": "Never dump greywater directly into open surface water bodies.",
+      "image_description": "Water soaking into a gravel-filled pit in the soil"
     }
   ],
-  "when_to_use": "Use this guide when normal sanitation systems are unavailable or unreliable.",
-  "do_not": ["Do not put waste near drinking water.", "Do not ignore hand hygiene.", "Do not reuse contaminated cloth without cleaning it."],
-  "sources": ["WHO WASH guidance, 2023", "Red Cross hygiene in emergencies, 2021"],
+  "when_to_use": "During power outages, natural disasters, or wilderness camping when municipal water and sewage systems are offline.",
+  "do_not": [
+    "Locate waste areas uphill or near drinking water sources",
+    "Leave human waste exposed to flies and air",
+    "Use unsterilized utensils or tools for medical procedures",
+    "Neglect washing hands even when water is scarce (use sanitizers or ash)"
+  ],
+  "sources": ["World Health Organization Sanitation Standards", "International Red Cross Emergency Hygiene Manual"],
   "difficulty": "beginner"
 }

@@ -1,38 +1,45 @@
 {
   "id": "choking",
   "category": "medicine",
-  "title": "Choking",
+  "title": "Choking Response",
   "priority": "critical",
   "offline": true,
   "last_updated": "2026-06-11",
-  "tags": ["choking", "airway", "first aid", "medicine", "breathing"],
-  "summary": "Recognize choking fast and use the right first-aid steps for adults, children, and infants.",
+  "tags": ["choking", "breathing", "first-aid", "emergency"],
+  "summary": "How to respond to airway obstruction in adults and children.",
   "sections": [
     {
-      "heading": "Step 1 — Recognize choking",
-      "body": "A choking person may be unable to speak, cough effectively, or breathe. They may grab their throat, make high-pitched sounds, or go silent. If the person can cough forcefully, encourage coughing and stay ready to act if the airway becomes fully blocked.",
-      "image_description": "A person holding their throat with a universal choking sign."
+      "heading": "Step 1 — Assess the Situation",
+      "body": "Ask the person 'Are you choking?' If they can speak, cough, or breathe, encourage them to cough forcefully to clear the obstruction. Do not interfere with their attempts to cough.",
+      "warning": "Do not give a choking person water or food, as this can worsen the blockage.",
+      "image_description": "Person nodding and coughing while holding throat"
     },
     {
-      "heading": "Step 2 — Help an adult or child over one year",
-      "body": "Stand behind the person and lean them forward slightly. Give firm back blows between the shoulder blades, then abdominal thrusts if the object does not come out, following local first-aid guidance. Repeat the cycle until the airway clears or the person becomes unresponsive.",
-      "warning": "Do not perform abdominal thrusts on infants or on someone who is pregnant unless local emergency guidance specifically instructs chest thrusts.",
-      "image_description": "A rescuer delivering back blows to a leaning-forward adult."
+      "heading": "Step 2 — Deliver Back Blows",
+      "body": "If they cannot speak or breathe, bend them forward at the waist and support their chest. Deliver five sharp blows between the shoulder blades using the heel of your hand.",
+      "warning": "Ensure the person is bent forward so the object exits the mouth rather than sliding further down.",
+      "image_description": "Rescuer giving back blows to bent-over person"
     },
     {
-      "heading": "Step 3 — Treat infant choking differently",
-      "body": "Infants under one year should be supported face-down along the forearm with the head lower than the chest. Give gentle back blows between the shoulder blades and chest thrusts if needed, not abdominal thrusts. Use only enough force to dislodge the object without injuring the infant.",
-      "image_description": "An infant supported face-down on a responder's forearm with back blows."
+      "heading": "Step 3 — Perform Abdominal Thrusts",
+      "body": "If the blockage is not cleared, stand behind the person. Wrap your arms around their waist. Make a fist with one hand, place it slightly above the navel, and grasp it with the other hand. Press hard into the abdomen with a quick upward thrust. Repeat up to five times.",
+      "warning": "Do not perform abdominal thrusts on pregnant women or infants under 1 year. Use chest thrusts instead.",
+      "image_description": "Rescuer performing Heimlich maneuver from behind"
     },
     {
-      "heading": "Step 4 — Call for emergency help",
-      "body": "Call emergency services immediately if the person cannot breathe, becomes blue, collapses, or loses consciousness. If they become unresponsive, start CPR if you are trained and follow dispatcher instructions. Even after the object comes out, the person may need medical care because swelling or injury can remain.",
-      "warning": "If you cannot get help quickly, continue first aid while another person calls emergency services.",
-      "image_description": "A phone with an emergency call icon next to a person receiving first aid."
+      "heading": "Step 4 — Call for Help and Start CPR",
+      "body": "If the person becomes unconscious, lower them gently to the ground. Call emergency services immediately. Begin CPR, starting with chest compressions. Each time you open the airway, look for the object and remove it if visible.",
+      "warning": "Never perform blind finger sweeps as you may push the object deeper.",
+      "image_description": "Person lying down receiving chest compressions"
     }
   ],
-  "when_to_use": "Use this guide when food or another object is blocking the airway and the person is struggling to breathe or speak.",
-  "do_not": ["Do not do blind finger sweeps.", "Do not shake the person.", "Do not delay emergency help if breathing stops."],
-  "sources": ["American Red Cross First Aid, 2021", "WHO emergency care guidance, 2023"],
+  "when_to_use": "When someone is choking, cannot speak or breathe, or is clutching their throat (the universal sign of choking).",
+  "do_not": [
+    "Give anything to drink",
+    "Perform blind finger sweeps",
+    "Use abdominal thrusts on infants under 1 year",
+    "Hesitate to call emergency services if the object remains stuck"
+  ],
+  "sources": ["American Heart Association Guidelines 2020", "International Red Cross First Aid Manual"],
   "difficulty": "beginner"
 }

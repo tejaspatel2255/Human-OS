@@ -1,37 +1,45 @@
 {
   "id": "radio-basics",
   "category": "communication",
-  "title": "Radio Basics",
+  "title": "Emergency Radio Basics",
   "priority": "useful",
   "offline": true,
   "last_updated": "2026-06-11",
-  "tags": ["radio", "communication", "distress", "battery", "emergency"],
-  "summary": "Use basic radio knowledge to listen for alerts, conserve power, and make a clear distress call.",
+  "tags": ["radio", "comms", "communication", "emergency", "frequency"],
+  "summary": "How to operate hand-held radios, select frequencies, and use protocols during emergency scenarios.",
   "sections": [
     {
-      "heading": "Step 1 — Know common emergency radio types",
-      "body": "NOAA weather radios can receive hazard alerts in supported regions and are often useful for storms and other emergencies. Amateur radio, or ham radio, is widely used by trained operators for long-distance and local emergency communication. FRS and GMRS radios are simple handheld options for short-range use where permitted by local law.",
-      "image_description": "A row of different handheld radios labeled weather, ham, and short-range."
+      "heading": "Step 1 — Understand Radio Frequencies",
+      "body": "Select the correct band: FRS/GMRS (462 MHz) are common for short-range walkie-talkies. VHF (136-174 MHz) works best in open terrain and marine environments (Channel 16 is the international distress channel). UHF (400-470 MHz) is better inside buildings and wooded areas. HAM bands offer long-distance communication.",
+      "warning": "Do not transmit on emergency, police, or military frequencies unless in a life-or-death emergency.",
+      "image_description": "A spectrum diagram showing FRS, VHF, and UHF bands with ranges"
     },
     {
-      "heading": "Step 2 — Listen for distress and emergency channels",
-      "body": "Marine distress calling often uses channel 16 at 156.8 MHz, and aviation distress historically uses 121.5 MHz for emergency monitoring. In any emergency, follow local rules and established radio procedures for the specific service you are using. Listening first is often the best way to learn what channel is active for help.",
-      "image_description": "A radio display showing 156.8 MHz and 121.5 MHz with a distress icon."
+      "heading": "Step 2 — Conserve Battery Power",
+      "body": "Radios consume significant energy, especially during transmission. To prolong battery life: 1. Turn down display backlighting and volume. 2. Set power output to 'Low' (1W or 0.5W) for close-range team communications. 3. Establish pre-arranged schedules to check-in (e.g., 5 minutes at the top of every hour) and turn off the radio in between.",
+      "warning": "Always keep a spare set of lithium batteries or a hand-crank solar charger in your emergency kit.",
+      "image_description": "Hand-crank radio charger with a battery level indicator"
     },
     {
-      "heading": "Step 3 — Make a clear distress call",
-      "body": "Keep the message short and structured: who you are, where you are, what is happening, and what help you need. Speak slowly and repeat the most important information if necessary. If a radio operator responds, follow their instructions exactly and stay on the channel unless told otherwise.",
-      "warning": "Do not clutter a distress channel with unnecessary speech.",
-      "image_description": "A sample distress call format card with location, problem, and help needed."
+      "heading": "Step 3 — Apply Transmission Protocols",
+      "body": "Keep transmissions concise. Listen for 5 seconds before speaking to ensure the channel is clear. Speak clearly in a normal voice, 2-3 inches from the microphone. Use standard brevity codes: say 'Over' when finished speaking; 'Out' when ending the conversation; and 'Say Again' to request repeat. Use phonetic alphabet (Alpha, Bravo, Charlie) to spell out names or coordinates.",
+      "warning": "Never use the distress call 'MAYDAY' unless life, vessel, or property is in immediate, grave danger.",
+      "image_description": "Person speaking calmly into a hand-held radio"
     },
     {
-      "heading": "Step 4 — Save battery and improve reception",
-      "body": "Reduce transmit power when close to the receiver and keep transmissions brief to conserve battery. Turn the radio off when not needed and lower screen or backlight use if the device has one. A simple improvised antenna or moving to higher ground can sometimes improve reception, but use only safe, legal methods.",
-      "image_description": "A battery icon, low-power symbol, and a simple wire antenna sketch."
+      "heading": "Step 4 — Optimize Antenna and Location",
+      "body": "Radio waves travel line-of-sight. For maximum range: 1. Climb to the highest accessible ground (hilltops, roofs). 2. Keep the antenna pointing vertically. 3. Avoid transmitting close to concrete walls, metal structures, or power lines. 4. If using HF, construct a simple dipol wire antenna hung between two trees.",
+      "warning": "Never touch or hold the antenna during transmission as this degrades signal and can cause RF burns.",
+      "image_description": "Person standing on a hilltop holding a radio antenna vertically"
     }
   ],
-  "when_to_use": "Use this guide when you need to receive emergency information or send a distress message by radio.",
-  "do_not": ["Do not assume every frequency is monitored everywhere.", "Do not drain batteries with long transmissions.", "Do not transmit outside the rules for your radio service."],
-  "sources": ["ITU emergency communications guidance, 2022", "Red Cross disaster communications guidance, 2021"],
-  "difficulty": "intermediate"
+  "when_to_use": "When standard cellular networks, internet connections, and telephone lines are offline during a regional disaster.",
+  "do_not": [
+    "Transmit on emergency frequencies without a true emergency",
+    "Hold the antenna during transmission",
+    "Leave the radio scanning or transmitting continuously",
+    "Use complex language (keep messages short, plain, and clear)"
+  ],
+  "sources": ["Federal Communications Commission Emergency Guidelines", "International Telecommunication Union Radiocommunication Handbook"],
+  "difficulty": "useful"
 }

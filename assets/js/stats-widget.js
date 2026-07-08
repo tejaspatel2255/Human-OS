@@ -1,3 +1,17 @@
+// Initialize immediate defaults on DOM content loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const visitors = document.getElementById('stat-visitors');
+  const countries = document.getElementById('stat-countries');
+  const articles = document.getElementById('stat-articles');
+  const ai = document.getElementById('stat-ai');
+  const stars = document.getElementById('stat-stars');
+  if (visitors) visitors.textContent = '🌍 Loading...';
+  if (countries) countries.textContent = '📍 Global';
+  if (articles) articles.textContent = '📖 10 articles';
+  if (ai) ai.textContent = '🤖 AI ready';
+  if (stars) stars.textContent = '⭐ GitHub';
+});
+
 async function animateCounter(elementId, targetValue, duration = 1200) {
   const el = document.getElementById(elementId);
   if (!el) return;
@@ -34,7 +48,9 @@ function renderStatsWidget(stats, isLastKnown = false) {
       fetch("/content/index.json")
         .then((r) => r.ok ? r.json() : null)
         .then((data) => {
-          if (data && Array.isArray(data.articles)) {
+          if (data && Array.isArray(data)) {
+            articles.textContent = `📖 ${data.length} articles`;
+          } else if (data && Array.isArray(data.articles)) {
             articles.textContent = `📖 ${data.articles.length} articles`;
           }
         })
@@ -60,15 +76,17 @@ function renderStatsWidget(stats, isLastKnown = false) {
 }
 
 async function loadPublicStats() {
-  const umamiId = window.CONFIG && window.CONFIG.UMAMI_WEBSITE_ID;
-  const umamiKey = window.CONFIG && window.CONFIG.UMAMI_PUBLIC_KEY;
-  if (!umamiId || !umamiKey || umamiId.includes("PLACEHOLDER") || umamiId.includes("YOUR_")) {
+  if (!window.CONFIG?.UMAMI_WEBSITE_ID || window.CONFIG.UMAMI_WEBSITE_ID.includes("YOUR_") || window.CONFIG.UMAMI_WEBSITE_ID.includes("PLACEHOLDER")) {
     const cached = JSON.parse(localStorage.getItem("humanos_last_stats") || "null");
     if (cached) {
       renderStatsWidget(cached, true);
     }
     return;
   }
+
+  const umamiId = window.CONFIG.UMAMI_WEBSITE_ID;
+  const umamiKey = window.CONFIG.UMAMI_PUBLIC_KEY;
+  if (!umamiKey) return;
 
   try {
     const res = await fetch(`https://api.umami.is/v1/websites/${umamiId}/stats`, {
@@ -101,12 +119,10 @@ async function loadPublicStats() {
 }
 
 async function loadGitHubStars() {
-  const repo = (window.CONFIG && window.CONFIG.GITHUB_REPO) || "tejaspatel2255/Human-OS";
-  if (!repo || repo.includes("username/")) {
-    const stars = document.getElementById("stat-stars");
-    if (stars) stars.hidden = true;
+  if (!window.CONFIG?.GITHUB_REPO || window.CONFIG.GITHUB_REPO.includes("username/")) {
     return;
   }
+  const repo = window.CONFIG.GITHUB_REPO;
   try {
     const res = await fetch(`https://api.github.com/repos/${repo}`);
     if (res.ok) {

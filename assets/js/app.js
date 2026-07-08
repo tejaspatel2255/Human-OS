@@ -60,7 +60,6 @@ async function registerServiceWorker() {
 }
 
 function detectOfflineStatus() {
-  // Set initial state silently (no toast) then wire up transitions
   if (navigator.onLine) {
     document.body.classList.remove("offline");
     const badge = $("offline-badge");
@@ -132,6 +131,26 @@ const categoryMeta = {
   tools: { title: "Tools", emoji: "🛠️" }
 };
 
+async function loadArticlesFromIndex() {
+  const res = await fetch('/content/index.json');
+  if (!res.ok) throw new Error('content/index.json not found');
+  const index = await res.json();
+
+  // Load each article and save to IndexedDB
+  const loads = index.map(async (meta) => {
+    try {
+      const r = await fetch(`/content/${meta.category}/${meta.id}.json`);
+      if (r.ok) {
+        const article = await r.json();
+        await saveArticle(article);
+      }
+    } catch(e) { /* skip missing articles */ }
+  });
+
+  await Promise.allSettled(loads);
+  window.__articleIndex = index; // store in memory for category views
+}
+
 async function navigateToCategory(categoryId) {
   currentCategoryId = categoryId;
   showView("view-category");
@@ -147,32 +166,27 @@ async function navigateToCategory(categoryId) {
   window.history.pushState({}, "", url);
 
   let articles = [];
-  if (categoryId === "emergency") {
-    if (typeof getAllArticles === "function") {
-      let all = await getAllArticles();
-      if (!all || !all.length) {
-        try {
-          const res = await fetch("/content/index.json");
-          if (res.ok) {
-            const data = await res.json();
-            all = data.articles || [];
-          }
-        } catch(e) {}
+  let index = window.__articleIndex;
+  if (!index) {
+    try {
+      const res = await fetch("/content/index.json");
+      if (res.ok) {
+        index = await res.json();
+        window.__articleIndex = index;
       }
-      articles = all.filter(a => a.priority === "critical");
-    }
+    } catch(e) {}
+  }
+  if (!index) index = [];
+
+  if (categoryId === "emergency") {
+    articles = index.filter(a => a.priority === "critical" || a.category === "medicine");
   } else {
+    articles = index.filter(a => a.category === categoryId || (categoryId === "comms" && a.category === "communication"));
+  }
+
+  if (!articles || !articles.length) {
     if (typeof getArticlesByCategory === "function") {
       articles = await getArticlesByCategory(categoryId);
-    }
-    if (!articles || !articles.length) {
-      try {
-        const res = await fetch("/content/index.json");
-        if (res.ok) {
-          const data = await res.json();
-          articles = (data.articles || []).filter(a => a.category === categoryId || (categoryId === "comms" && a.category === "communication"));
-        }
-      } catch(e) {}
     }
   }
 
@@ -195,7 +209,18 @@ async function navigateToArticle(articleId) {
   showView("view-article");
   let article = await getArticle(articleId);
   if (!article) {
-    const category = currentCategoryId || "general";
+    let index = window.__articleIndex;
+    if (!index) {
+      try {
+        const res = await fetch("/content/index.json");
+        if (res.ok) {
+          index = await res.json();
+          window.__articleIndex = index;
+        }
+      } catch(e) {}
+    }
+    const meta = (index || []).find(a => a.id === articleId);
+    const category = meta ? meta.category : (currentCategoryId || "general");
     const response = await fetch(`/content/${category}/${articleId}.json`);
     if (response.ok) {
       article = await response.json();
@@ -249,11 +274,12 @@ function renderArticle(article) {
       html.push(`<div class="warning-box">${section.warning}</div>`);
     }
   }
-  if (article.whenToUse) {
-    html.push(`<h2>When to use</h2><p>${article.whenToUse}</p>`);
+  const whenToUse = article.when_to_use || article.whenToUse;
+  if (whenToUse) {
+    html.push(`<h2>When to use</h2><p>${whenToUse}</p>`);
   }
-  if (Array.isArray(article.doNot) && article.doNot.length) {
-    html.push(`<h2>Do NOT</h2><ul class="do-not-list">${article.doNot.map((item) => `<li>❌ ${item}</li>`).join("")}</ul>`);
+  if (Array.isArray(article.do_not) && article.do_not.length) {
+    html.push(`<h2>Do NOT</h2><ul class="do-not-list">${article.do_not.map((item) => `<li>❌ ${item}</li>`).join("")}</ul>`);
   }
   if (Array.isArray(article.sources) && article.sources.length) {
     html.push(`<h2>Sources</h2><ul class="sources-list">${article.sources.map((item) => `<li>${item}</li>`).join("")}</ul>`);
@@ -384,10 +410,17 @@ async function initDownloadAll() {
   if (!btn || !progress || !bar || !status) return;
 
   btn.addEventListener("click", async () => {
-    const res = await fetch("/content/index.json");
-    if (!res.ok) return;
-    const data = await res.json();
-    const urls = Array.isArray(data.urls) ? data.urls : Array.isArray(data.articles) ? data.articles.map((item) => item.url).filter(Boolean) : [];
+    let index = window.__articleIndex;
+    if (!index) {
+      const res = await fetch("/content/index.json");
+      if (res.ok) {
+        index = await res.json();
+        window.__articleIndex = index;
+      }
+    }
+    if (!index || !Array.isArray(index)) return;
+    const urls = index.map(meta => `/content/${meta.category}/${meta.id}.json`);
+    urls.push('/content/index.json');
     progress.hidden = false;
     bar.style.width = "0%";
     status.textContent = `Downloading 0 / ${urls.length} articles...`;
@@ -445,8 +478,7 @@ function routeFromURL() {
   showView("view-home");
 }
 
-
-function initSettingsControls() {
+function initSettings() {
   const settingsBtn = $("settings-btn");
   const panel = $("settings-panel");
   const closeBtn = $("settings-close-btn");
@@ -551,7 +583,7 @@ function initNavigation() {
   });
 }
 
-function initCategoryCards() {
+function initCategoryButtons() {
   document.querySelectorAll(".cat-card").forEach((btn) => {
     btn.addEventListener("click", () => {
       navigateToCategory(btn.dataset.category);
@@ -561,29 +593,30 @@ function initCategoryCards() {
   const emergencyBar = $("emergency-btn");
   if (emergencyBar) {
     emergencyBar.addEventListener("click", () => {
-      navigateToCategory("emergency");
+      navigateToCategory("medicine");
     });
   }
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  await initDB();
-  await initI18n();
-  await registerServiceWorker();
-  detectOfflineStatus();
-  if (typeof loadPublicStats === "function") await loadPublicStats();
-  if (typeof loadGitHubStars === "function") await loadGitHubStars();
-  await updateLocalStats("sessions");
-  await renderPersonalStats();
-  await initSearch();
-  routeFromURL();
-  initAIChat();
-  initFontSizeControls();
-  initThemeControls();
-  initDownloadAll();
-  initSettingsControls();
-  initCategoryCards();
-  initNavigation();
+document.addEventListener('DOMContentLoaded', async () => {
+  try { await initDB(); } catch(e) { console.error('DB init failed', e); }
+  try { await initI18n(); } catch(e) { console.error('i18n failed', e); }
+  try { registerServiceWorker(); } catch(e) {}
+  try { detectOfflineStatus(); } catch(e) {}
+  try { await loadArticlesFromIndex(); } catch(e) { console.error('Content load failed', e); }
+  try { initCategoryButtons(); } catch(e) {}
+  try { initSearch(); } catch(e) {}
+  try { initAIChat(); } catch(e) {}
+  try { initDownloadAll(); } catch(e) {}
+  try { initThemeControls(); } catch(e) {}
+  try { initFontSizeControls(); } catch(e) {}
+  try { initSettings(); } catch(e) {}
+  try { await renderPersonalStats(); } catch(e) {}
+  try { loadPublicStats(); } catch(e) {}
+  try { loadGitHubStars(); } catch(e) {}
+  try { initNavigation(); } catch(e) {}
+  try { routeFromURL(); } catch(e) {}
+  try { await updateLocalStats("sessions"); } catch(e) {}
 });
 
 window.registerServiceWorker = registerServiceWorker;
@@ -602,3 +635,7 @@ window.initDownloadAll = initDownloadAll;
 window.initFontSizeControls = initFontSizeControls;
 window.initThemeControls = initThemeControls;
 window.showToast = showToast;
+window.initSettings = initSettings;
+window.initSettingsControls = initSettings;
+window.initCategoryButtons = initCategoryButtons;
+window.initCategoryCards = initCategoryButtons;

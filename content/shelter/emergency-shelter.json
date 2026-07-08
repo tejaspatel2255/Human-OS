@@ -5,34 +5,41 @@
   "priority": "critical",
   "offline": true,
   "last_updated": "2026-06-11",
-  "tags": ["shelter", "warmth", "insulation", "protection", "survival"],
-  "summary": "Build a shelter that blocks wind, sheds rain, and keeps body heat from being lost to the ground.",
+  "tags": ["shelter", "build", "warmth", "insulation", "emergency"],
+  "summary": "How to select a safe location and build a basic survival shelter for protection.",
   "sections": [
     {
-      "heading": "Step 1 — Choose a safe site",
-      "body": "Pick a site that avoids falling branches, flood channels, rockfall, and exposed wind if possible. Stay away from animal paths, insect nests, and places that could trap cold air or water. A small improvement in safety can matter more than a quick construction site.",
-      "image_description": "A terrain sketch highlighting hazards like flood zones, dead trees, and wind exposure."
+      "heading": "Step 1 — Select a Safe Site",
+      "body": "Find a dry, flat area protected from the wind. Avoid low spots like ravines or dry riverbeds (risk of flash floods), the base of cliffs (falling rocks), or beneath dead trees (widowmakers). Ensure there is a plentiful supply of dry wood and foliage nearby.",
+      "warning": "Never build a shelter directly on a game trail, as animal encounters can occur.",
+      "image_description": "Shelter site located on a gentle slope surrounded by healthy trees"
     },
     {
-      "heading": "Step 2 — Insulate from the ground",
-      "body": "Ground contact can steal heat much faster than air, so insulation from the ground is critical. Use leaves, grass, pine boughs, dry clothing, cardboard, or other dry materials to create a thick sleeping layer. More insulation is better, especially in wet or cold conditions.",
-      "warning": "A shelter without ground insulation can still leave you dangerously cold.",
-      "image_description": "A person lying on a thick bed of leaves and branches inside a shelter."
+      "heading": "Step 2 — Construct a Support Frame",
+      "body": "Find a sturdy ridgepole (a long, thick log) and prop one end up in the fork of a tree or on a pair of crossed A-frame branches. Lean smaller support branches along both sides of the ridgepole at a 45-degree angle to form the rib structure of your shelter.",
+      "warning": "Ensure the frame is highly stable and can support weight before adding roofing materials.",
+      "image_description": "A long log resting in a tree fork with ribs leaned against it"
     },
     {
-      "heading": "Step 3 — Build a simple lean-to or debris shelter",
-      "body": "A lean-to uses a frame and a windbreak, while a debris shelter piles natural material over a frame to trap air and block weather. Keep the opening small and face it away from the prevailing wind. If you can, make the structure low and compact so it warms more quickly from body heat.",
-      "image_description": "A lean-to with a slanted roof and windbreak facing away from wind."
+      "heading": "Step 3 — Build a Ground Insulation Bed",
+      "body": "The ground will absorb your body heat rapidly. Build an insulation mattress by laying down a thick layer (at least 6-8 inches) of dry leaves, pine needles, ferns, or soft evergreen boughs inside the shelter. Sleep on top of this bed, not on bare earth.",
+      "warning": "Do not skip the insulation bed; it is more critical for warmth than the shelter walls.",
+      "image_description": "Thick bed of dry brown pine needles piled inside the shelter frame"
     },
     {
-      "heading": "Step 4 — Conserve body heat",
-      "body": "Reduce heat loss by staying dry, wearing layers, and covering the head when the environment is cold. Share warmth only if it is safe and appropriate, and keep moving gently if you start to feel chilled. Shelter works best when combined with water, calories, and rest.",
-      "warning": "If the person is shivering intensely, confused, or sleepy, seek warming help urgently.",
-      "image_description": "A sheltered person wrapped in layered clothing with a warm hat and insulated bedding."
+      "heading": "Step 4 — Thatch and Cover the Outer Walls",
+      "body": "Place dense leafy branches, pine boughs, or strips of bark over the ribbed frame. Start from the bottom and work your way up to the top, overlapping layers like shingles on a house. This ensures that rainwater runs down the outer walls instead of dripping inside.",
+      "warning": "Leave a small opening for ventilation and entry on the side opposite the wind direction.",
+      "image_description": "Overlapping pine branches covering the outer frame like roof shingles"
     }
   ],
-  "when_to_use": "Use this guide when you need temporary protection from cold, wind, rain, or sun.",
-  "do_not": ["Do not build in a flood path.", "Do not sleep directly on bare ground.", "Do not ignore signs of hypothermia."],
-  "sources": ["WHO emergency shelter guidance, 2022", "IFRC / Red Cross disaster shelter guidance, 2021"],
-  "difficulty": "intermediate"
+  "when_to_use": "When stranded in the wilderness or during an emergency disaster where standard shelter is unavailable or unsafe.",
+  "do_not": [
+    "Sleep directly on bare ground",
+    "Build in low-lying areas or narrow gorges",
+    "Use rotten or weak logs for the ridgepole frame",
+    "Burn a fire inside a closed, unventilated shelter space"
+  ],
+  "sources": ["US Army Survival Manual FM 21-76", "FEMA Disaster Recovery Guides"],
+  "difficulty": "beginner"
 }

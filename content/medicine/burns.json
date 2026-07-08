@@ -1,38 +1,46 @@
 {
   "id": "burns",
   "category": "medicine",
-  "title": "Burns",
+  "title": "Treating Burns",
   "priority": "critical",
   "offline": true,
   "last_updated": "2026-06-11",
-  "tags": ["burns", "first aid", "cooling", "medicine", "wound care"],
-  "summary": "Cool the burn quickly, protect the skin, and know when a burn needs urgent medical help.",
+  "tags": ["burns", "fire", "skin", "emergency"],
+  "summary": "How to treat thermal burns safely without medical equipment.",
   "sections": [
     {
-      "heading": "Step 1 — Identify the burn",
-      "body": "Burns are usually described by depth and by how much skin is affected. Superficial burns cause redness and pain, while deeper burns may look white, brown, leathery, or charred and may not hurt much because nerves are damaged. Any burn on the face, hands, feet, genitals, major joints, or a burn larger than the person's palm deserves careful attention and often needs medical review.",
-      "image_description": "A simple diagram showing shallow, partial-thickness, and full-thickness burns on skin layers."
+      "heading": "Step 1 — Cool the Burn",
+      "body": "Hold the burned area under cool (not cold) running water for 10 to 20 minutes. This stops the burning process and reduces pain significantly. Do not use ice, iced water, or any creams or buttery substances.",
+      "warning": "Never use ice directly on a burn. It can cause further tissue damage.",
+      "image_description": "Person holding burned hand under a running tap"
     },
     {
-      "heading": "Step 2 — Cool the burn",
-      "body": "Cool the burn under cool running water for about 20 minutes as soon as possible. This helps stop the heat damage and can reduce pain and swelling. Use cool water, not ice, because ice can further injure the skin and make the tissue damage worse.",
-      "warning": "Do not use butter, oil, toothpaste, or ice on a burn.",
-      "image_description": "A hand held under cool running tap water with a timer showing 20 minutes."
+      "heading": "Step 2 — Cover the Burn",
+      "body": "Cover the burned area loosely with a sterile non-stick dressing or clean cling film. Do not wrap it tightly. If cling film is unavailable, a clean plastic bag works for hand burns.",
+      "warning": "Do not use fluffy cotton or anything that can stick to the wound.",
+      "image_description": "Burned hand loosely wrapped in cling film"
     },
     {
-      "heading": "Step 3 — Cover and protect it",
-      "body": "After cooling, gently cover the burn with a clean, non-fluffy cloth or cling film if available. The cover should protect the area without sticking to the wound. If clothing is stuck to the burn, do not pull it off; cut around it instead.",
-      "image_description": "A burn wrapped loosely with clean gauze or cling film."
+      "heading": "Step 3 — Seek Help",
+      "body": "Seek medical help for any burn larger than a postage stamp, burns on the face, hands, feet, genitals or joints, and all chemical or electrical burns. Burns in children under 5 or adults over 60 also need urgent care.",
+      "warning": "Do not pop blisters. They protect against infection.",
+      "image_description": "Diagram showing burn severity levels on skin"
     },
     {
-      "heading": "Step 4 — Know when to seek help",
-      "body": "Get urgent medical help for large burns, deep burns, chemical burns, electrical burns, burns with trouble breathing, or burns with signs of infection such as increasing redness, swelling, pus, or fever. Infants, older adults, and people with chronic illness need lower thresholds for care. If the person feels faint, confused, or unwell after a burn, treat it as urgent.",
-      "warning": "Call emergency services if the burn is severe, the person has trouble breathing, or the burn covers a large area.",
-      "image_description": "A checklist icon next to danger signs like smoke inhalation, large burn area, and infection."
+      "heading": "Step 4 — Manage Pain",
+      "body": "Give paracetamol or ibuprofen for pain if available and the person is not allergic. Keep the person warm as burns cause rapid heat loss. Offer fluids if the person is conscious and not vomiting.",
+      "warning": "Do not give aspirin to anyone under 16.",
+      "image_description": "Person resting with burn covered"
     }
   ],
-  "when_to_use": "Use this guide immediately after a thermal burn, scald, or minor flame injury while deciding whether urgent care is needed.",
-  "do_not": ["Do not pop blisters.", "Do not apply ice directly.", "Do not remove stuck clothing.", "Do not use greasy home remedies."],
-  "sources": ["WHO first aid guidance, 2023", "IFRC / Red Cross First Aid Handbook, 2021"],
+  "when_to_use": "When someone has been burned by fire, hot liquid, steam, hot metal, or chemicals.",
+  "do_not": [
+    "Apply ice or iced water",
+    "Use butter, toothpaste, or any cream",
+    "Pop blisters",
+    "Remove clothing stuck to the burn",
+    "Use fluffy dressings that can stick"
+  ],
+  "sources": ["WHO Burns Fact Sheet 2023", "British Red Cross First Aid Manual"],
   "difficulty": "beginner"
 }
