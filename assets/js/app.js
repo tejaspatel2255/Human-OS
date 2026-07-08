@@ -106,6 +106,7 @@ function showView(viewId) {
     if (el) el.hidden = id !== viewId;
   });
   currentViewId = viewId;
+  window.currentViewId = viewId;
   const titles = {
     "view-home": "HumanOS — Survival Knowledge",
     "view-category": "HumanOS — Category",
@@ -153,6 +154,8 @@ async function loadArticlesFromIndex() {
 
 async function navigateToCategory(categoryId) {
   currentCategoryId = categoryId;
+  window.currentCategoryId = categoryId;
+  window.currentArticleId = null;
   showView("view-category");
   const meta = categoryMeta[categoryId] || { title: categoryId, emoji: "📁" };
   const translationKey = categoryId === "comms" ? "communication" 
@@ -210,6 +213,7 @@ async function navigateToCategory(categoryId) {
 
 async function navigateToArticle(articleId) {
   currentArticleId = articleId;
+  window.currentArticleId = articleId;
   showView("view-article");
   let article = await getArticle(articleId);
   if (!article) {

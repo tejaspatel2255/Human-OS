@@ -52,6 +52,13 @@ async function switchLanguage(lang) {
   }
   const picker = document.getElementById("lang-picker");
   if (picker) picker.hidden = true;
+
+  // Refresh dynamic view if open
+  if (window.currentViewId === "view-category" && typeof window.navigateToCategory === "function" && window.currentCategoryId) {
+    window.navigateToCategory(window.currentCategoryId);
+  } else if (window.currentViewId === "view-article" && typeof window.navigateToArticle === "function" && window.currentArticleId) {
+    window.navigateToArticle(window.currentArticleId);
+  }
 }
 
 window.initI18n = initI18n;
