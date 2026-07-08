@@ -168,6 +168,7 @@ async function navigateToCategory(categoryId) {
   const crumb = $("category-breadcrumb");
   if (title) title.textContent = `${meta.emoji} ${translatedTitle}`;
   if (crumb) crumb.textContent = translatedTitle;
+  document.title = `HumanOS — ${translatedTitle}`;
 
   const url = new URL(window.location);
   url.searchParams.set("category", categoryId);
@@ -267,6 +268,7 @@ async function navigateToArticle(articleId) {
   if (articleBreadcrumb) {
     articleBreadcrumb.textContent = article.title || article.id;
   }
+  document.title = `HumanOS — ${article.title || article.id}`;
 
   renderArticle(article);
   addToHistory(articleId);
