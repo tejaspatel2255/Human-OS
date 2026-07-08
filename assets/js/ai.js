@@ -1,9 +1,9 @@
 const AI_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 const AI_MODELS = [
-  "groq/llama-3.3-70b",
-  "google/gemini-flash-1.5:free",
+  "openrouter/free",
   "meta-llama/llama-3.3-70b-instruct:free",
-  "mistralai/mistral-7b-instruct:free"
+  "meta-llama/llama-3.2-3b-instruct:free",
+  "google/gemma-4-31b-it:free"
 ];
 
 const SYSTEM_PROMPT = "You are HumanOS, a survival knowledge assistant.\nAnswer ONLY about: medicine, water, food, shelter, energy,\nsanitation, communication, mental health, emergency survival.\nKeep answers factual, cite WHO/Red Cross sources where relevant.\nFormat answers as simple numbered steps. Maximum 300 words.\nIf asked about anything unrelated to survival, politely decline.";
