@@ -15,6 +15,7 @@ const STATIC_ASSETS = [
   "/assets/js/db.js",
   "/assets/js/analytics.js",
   "/assets/js/stats-widget.js",
+  "/assets/icons/logo.png",
   "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"
 ];
 
