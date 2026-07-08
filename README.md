@@ -77,11 +77,11 @@ This project exists for people who may need life-saving information when the int
 
 ## AI Model Fallback Chain
 
-HumanOS tries four free OpenRouter models in this exact order:
+HumanOS tries seven free OpenRouter models in this exact order:
 
-`groq/llama-3.3-70b` → `google/gemini-flash-1.5:free` → `meta-llama/llama-3.3-70b-instruct:free` → `mistralai/mistral-7b-instruct:free`
+`openrouter/free` → `meta-llama/llama-3.3-70b-instruct:free` → `meta-llama/llama-3.2-3b-instruct:free` → `google/gemma-4-31b-it:free` → `nousresearch/hermes-3-llama-3.1-405b:free` → `liquid/lfm-2.5-1.2b-thinking:free` → `qwen/qwen3-coder:free`
 
-The app uses the first model that responds successfully. If a model returns `429` or `503`, HumanOS moves to the next model. If a request times out or the network fails, it also continues to the next model. If every model fails, HumanOS falls back to a cached answer when available, and otherwise shows an offline guidance message.
+The app uses the first model that responds successfully. If a model returns `429` (rate-limited) or `503` (busy), HumanOS automatically continues to the next model. If every model in the chain fails or rate-limits, HumanOS will try to fetch a cached answer from IndexedDB. If no cached answer exists, the assistant displays a localized message informing the user that the service is temporarily busy, distinguishing rate-limit issues from offline states.
 
 ## Adding Content
 
