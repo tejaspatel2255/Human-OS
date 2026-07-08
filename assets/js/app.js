@@ -440,6 +440,25 @@ function applyFontSize(value) {
 function initFontSizeControls() {
   const saved = localStorage.getItem("humanos_font") || "font-md";
   applyFontSize(saved);
+
+  const fontBtn = $("font-btn");
+  if (fontBtn) {
+    fontBtn.addEventListener("click", () => {
+      const current = localStorage.getItem("humanos_font") || "font-md";
+      let next = "font-md";
+      if (current === "font-sm") {
+        next = "font-md";
+      } else if (current === "font-md") {
+        next = "font-lg";
+      } else if (current === "font-lg") {
+        next = "font-xl";
+      } else {
+        next = "font-sm";
+      }
+      applyFontSize(next);
+      showToast(`Font size set to ${next.replace("font-", "").toUpperCase()}`);
+    });
+  }
 }
 
 function applyTheme(value) {
@@ -450,7 +469,25 @@ function applyTheme(value) {
 function initThemeControls() {
   const saved = localStorage.getItem("humanos_theme") || "light";
   applyTheme(saved);
+
+  const themeBtn = $("theme-btn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      const current = localStorage.getItem("humanos_theme") || "light";
+      let next = "light";
+      if (current === "light") {
+        next = "dark";
+      } else if (current === "dark") {
+        next = "contrast";
+      } else {
+        next = "light";
+      }
+      applyTheme(next);
+      showToast(`Theme set to ${next.toUpperCase()}`);
+    });
+  }
 }
+
 
 function routeFromURL() {
   const params = new URLSearchParams(location.search);
