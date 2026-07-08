@@ -129,7 +129,8 @@ function renderSearchResults(articles) {
   container.innerHTML = "";
 
   if (!articles || !articles.length) {
-    container.innerHTML = "<p>No results found</p>";
+    const noResultsText = typeof t === "function" ? t("no_results") : "No results found";
+    container.innerHTML = `<p>${noResultsText}</p>`;
     return;
   }
 

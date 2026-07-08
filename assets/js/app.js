@@ -46,11 +46,13 @@ async function registerServiceWorker() {
         progress.hidden = false;
         const percent = data.total ? Math.round((data.cached / data.total) * 100) : 0;
         bar.style.width = `${percent}%`;
-        status.textContent = `Downloading ${data.cached} / ${data.total} articles...`;
+        const downloadingLabel = typeof t === "function" ? t("downloading") : "Downloading...";
+        status.textContent = `${downloadingLabel} (${data.cached} / ${data.total})`;
         if (data.cached === data.total) {
           setTimeout(() => {
             progress.hidden = true;
-            showToast("All articles downloaded for offline use");
+            const completeLabel = typeof t === "function" ? t("download_complete") : "All articles downloaded for offline use";
+            showToast(completeLabel);
           }, 600);
         }
       }
@@ -427,7 +429,10 @@ async function handleAIMessage() {
 
   const aiBubble = document.createElement("div");
   aiBubble.className = "message message--ai";
-  aiBubble.innerHTML = `${result.answer}<div class="message__model">${getModelDisplayName(result.model)}${result.fromCache ? " · Cached" : ""}</div><div class="ai-disclaimer">AI answers are informational only. Always seek professional help.</div>`;
+  const disclaimer = typeof t === "function" ? t("ai_disclaimer") : "AI answers are informational only. Always seek professional help.";
+  const cachedLabel = typeof t === "function" ? t("cached_answer") : "Cached";
+  const fromCacheStr = result.fromCache ? ` · ${cachedLabel}` : "";
+  aiBubble.innerHTML = `${result.answer}<div class="message__model">${getModelDisplayName(result.model)}${fromCacheStr}</div><div class="ai-disclaimer">${disclaimer}</div>`;
   messages.appendChild(aiBubble);
   trackEvent("ai_question", { category: currentCategoryId || "general", model: result.model });
 }
@@ -453,7 +458,8 @@ async function initDownloadAll() {
     urls.push('/content/index.json');
     progress.hidden = false;
     bar.style.width = "0%";
-    status.textContent = `Downloading 0 / ${urls.length} articles...`;
+    const downloadingLabel = typeof t === "function" ? t("downloading") : "Downloading...";
+    status.textContent = `${downloadingLabel} (0 / ${urls.length})`;
     if (navigator.serviceWorker.controller) {
       navigator.serviceWorker.controller.postMessage({ type: "DOWNLOAD_ALL", urls });
     }
