@@ -55,5 +55,7 @@
   "error_try_again": "出错了。请重试。",
   "no_results": "未找到结果",
   "storage_low": "设备存储空间不足。部分内容可能无法缓存。",
-  "github_stars": "人给该项目点了星标"
+  "github_stars": "人给该项目点了星标",
+  "category": "类别",
+  "priority": "优先级"
 }

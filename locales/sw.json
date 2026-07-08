@@ -55,5 +55,7 @@
   "error_try_again": "Hitilafu. Jaribu tena.",
   "no_results": "Hakuna matokeo yaliyopatikana",
   "storage_low": "Hifadhi ya kifaa ni ndogo. Baadhi ya maudhui huenda yasihifadhiwe kwenye kashe.",
-  "github_stars": "watu wameweka nyota kwenye mradi huu"
+  "github_stars": "watu wameweka nyota kwenye mradi huu",
+  "category": "Kundi",
+  "priority": "Kipaumbele"
 }

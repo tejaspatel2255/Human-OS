@@ -55,5 +55,7 @@
   "error_try_again": "Erro. Tente novamente.",
   "no_results": "Nenhum resultado encontrado",
   "storage_low": "O armazenamento do dispositivo está baixo. Parte do conteúdo pode não ser armazenada em cache.",
-  "github_stars": "pessoas deram estrela a este projeto"
+  "github_stars": "pessoas deram estrela a este projeto",
+  "category": "Categoria",
+  "priority": "Prioridade"
 }

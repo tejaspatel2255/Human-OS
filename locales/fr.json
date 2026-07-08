@@ -55,5 +55,7 @@
   "error_try_again": "Erreur. Réessayez.",
   "no_results": "Aucun résultat trouvé",
   "storage_low": "L’espace de stockage de l’appareil est faible. Une partie du contenu peut ne pas être mise en cache.",
-  "github_stars": "personnes ont mis ce projet en favori"
+  "github_stars": "personnes ont mis ce projet en favori",
+  "category": "Catégorie",
+  "priority": "Priorité"
 }

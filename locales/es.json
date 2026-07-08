@@ -55,5 +55,7 @@
   "error_try_again": "Error. Inténtalo de nuevo.",
   "no_results": "No se encontraron resultados",
   "storage_low": "El almacenamiento del dispositivo es bajo. Es posible que parte del contenido no se almacene en caché.",
-  "github_stars": "personas marcaron este proyecto con estrella"
+  "github_stars": "personas marcaron este proyecto con estrella",
+  "category": "Categoría",
+  "priority": "Prioridad"
 }

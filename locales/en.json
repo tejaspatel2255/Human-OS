@@ -55,5 +55,7 @@
   "error_try_again": "Error. Try again.",
   "no_results": "No results found",
   "storage_low": "Device storage is low. Some content may not be cached.",
-  "github_stars": "people starred this project"
+  "github_stars": "people starred this project",
+  "category": "Category",
+  "priority": "Priority"
 }
