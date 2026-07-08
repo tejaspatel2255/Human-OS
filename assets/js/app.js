@@ -110,12 +110,12 @@ function showView(viewId) {
   currentViewId = viewId;
   window.currentViewId = viewId;
   const titles = {
-    "view-home": "HumanOS — Offline First Aid, Disaster Response & Survival Guides",
+    "view-home": "HumanOS — First Aid, Disaster Response & Survival Guides",
     "view-category": "HumanOS — Category",
     "view-article": "HumanOS — Article",
     "view-search": "HumanOS — Search"
   };
-  document.title = titles[viewId] || "HumanOS — Offline First Aid, Disaster Response & Survival Guides";
+  document.title = titles[viewId] || "HumanOS — First Aid, Disaster Response & Survival Guides";
 }
 
 const categoryMeta = {
