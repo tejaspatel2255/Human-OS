@@ -261,6 +261,11 @@ async function navigateToArticle(articleId) {
     catLink.textContent = typeof t === "function" ? t(translationKey) : meta.title;
   }
 
+  const articleBreadcrumb = $("article-breadcrumb");
+  if (articleBreadcrumb) {
+    articleBreadcrumb.textContent = article.title || article.id;
+  }
+
   renderArticle(article);
   addToHistory(articleId);
   updateLocalStats("articles_read");
@@ -274,10 +279,19 @@ function renderArticle(article) {
   const sections = Array.isArray(article.sections) ? article.sections : [];
   const priority = article.priority || "useful";
   const html = [];
-  html.push(`<span class="priority-badge priority-badge--${priority}">${priority}</span>`);
+  
+  const translatedPriority = typeof t === "function" ? t(priority) : priority;
+  html.push(`<span class="priority-badge priority-badge--${priority}">${translatedPriority}</span>`);
   html.push(`<h1>${article.title || ""}</h1>`);
   if (article.summary) html.push(`<p class="lead">${article.summary}</p>`);
-  if (article.difficulty) html.push(`<div class="priority-badge priority-badge--useful">Difficulty: ${article.difficulty}</div>`);
+  
+  if (article.difficulty) {
+    const diffLabel = typeof t === "function" ? t("difficulty") : "Difficulty";
+    const diffValKey = article.difficulty.toLowerCase();
+    const diffVal = typeof t === "function" ? t(diffValKey) : article.difficulty;
+    html.push(`<div class="priority-badge priority-badge--useful">${diffLabel}: ${diffVal}</div>`);
+  }
+  
   for (const section of sections) {
     html.push(`<h2>${section.heading || section.title || ""}</h2>`);
     html.push(`<p>${section.body || section.text || ""}</p>`);
@@ -287,13 +301,16 @@ function renderArticle(article) {
   }
   const whenToUse = article.when_to_use || article.whenToUse;
   if (whenToUse) {
-    html.push(`<h2>When to use</h2><p>${whenToUse}</p>`);
+    const whenToUseLabel = typeof t === "function" ? t("when_to_use") : "When to use";
+    html.push(`<h2>${whenToUseLabel}</h2><p>${whenToUse}</p>`);
   }
   if (Array.isArray(article.do_not) && article.do_not.length) {
-    html.push(`<h2>Do NOT</h2><ul class="do-not-list">${article.do_not.map((item) => `<li>❌ ${item}</li>`).join("")}</ul>`);
+    const doNotLabel = typeof t === "function" ? t("do_not") : "Do NOT";
+    html.push(`<h2>${doNotLabel}</h2><ul class="do-not-list">${article.do_not.map((item) => `<li>❌ ${item}</li>`).join("")}</ul>`);
   }
   if (Array.isArray(article.sources) && article.sources.length) {
-    html.push(`<h2>Sources</h2><ul class="sources-list">${article.sources.map((item) => `<li>${item}</li>`).join("")}</ul>`);
+    const sourcesLabel = typeof t === "function" ? t("sources") : "Sources";
+    html.push(`<h2>${sourcesLabel}</h2><ul class="sources-list">${article.sources.map((item) => `<li>${item}</li>`).join("")}</ul>`);
   }
   content.innerHTML = html.join("");
   if (bookmarkBtn) {
