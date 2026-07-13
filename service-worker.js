@@ -1,4 +1,4 @@
-const CACHE_VERSION = "humanos-v1";
+const CACHE_VERSION = "humanos-v2";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CONTENT_CACHE = `${CACHE_VERSION}-content`;
 

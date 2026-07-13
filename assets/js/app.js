@@ -138,6 +138,7 @@ async function loadArticlesFromIndex() {
   const res = await fetch('/content/index.json');
   if (!res.ok) throw new Error('content/index.json not found');
   const index = await res.json();
+  window.__articleIndex = index; // Set immediately so routeFromURL can use it
 
   // Load each article and save to IndexedDB
   const loads = index.map(async (meta) => {
@@ -147,7 +148,7 @@ async function loadArticlesFromIndex() {
         const article = await r.json();
         await saveArticle(article);
       }
-    } catch(e) { /* skip missing articles */ }
+    } catch(e) { console.warn(`[HumanOS] Failed to load article: ${meta.id}`, e); }
   });
 
   await Promise.allSettled(loads);
@@ -191,7 +192,8 @@ async function navigateToCategory(categoryId) {
   if (categoryId === "emergency") {
     articles = index.filter(a => a.priority === "critical" || a.category === "medicine");
   } else {
-    articles = index.filter(a => a.category === categoryId || (categoryId === "comms" && a.category === "communication"));
+    const resolvedCategory = categoryId === "comms" ? "communication" : categoryId;
+    articles = index.filter(a => a.category === resolvedCategory);
   }
 
   if (!articles || !articles.length) {

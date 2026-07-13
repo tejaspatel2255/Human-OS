@@ -1,12 +1,72 @@
 [
-  { "id": "burns",              "category": "medicine",      "title": "Treating Burns",           "priority": "critical" },
-  { "id": "choking",           "category": "medicine",      "title": "Choking Response",          "priority": "critical" },
-  { "id": "water-purification", "category": "water",         "title": "Water Purification",        "priority": "critical" },
-  { "id": "finding-water",     "category": "water",         "title": "Finding Water",             "priority": "critical" },
-  { "id": "foraging",          "category": "food",          "title": "Safe Foraging",             "priority": "important" },
-  { "id": "food-preservation", "category": "food",          "title": "Food Preservation",         "priority": "important" },
-  { "id": "emergency-shelter", "category": "shelter",       "title": "Emergency Shelter",         "priority": "critical" },
-  { "id": "hygiene",           "category": "sanitation",    "title": "Hygiene Without Utilities", "priority": "important" },
-  { "id": "mental-health-crisis","category":"mental-health","title": "Crisis Mental Support",     "priority": "important" },
-  { "id": "radio-basics",      "category": "communication", "title": "Emergency Radio Basics",    "priority": "useful" }
+  {
+    "id": "burns",
+    "category": "medicine",
+    "title": "Treating Burns",
+    "priority": "critical",
+    "tags": ["burns", "fire", "skin", "emergency", "first aid"]
+  },
+  {
+    "id": "choking",
+    "category": "medicine",
+    "title": "Choking Response",
+    "priority": "critical",
+    "tags": ["choking", "airway", "heimlich", "emergency", "first aid"]
+  },
+  {
+    "id": "water-purification",
+    "category": "water",
+    "title": "Water Purification",
+    "priority": "critical",
+    "tags": ["water", "purification", "boiling", "chlorine", "drinking", "survival"]
+  },
+  {
+    "id": "finding-water",
+    "category": "water",
+    "title": "Finding Water",
+    "priority": "critical",
+    "tags": ["water", "finding", "dehydration", "survival", "wilderness"]
+  },
+  {
+    "id": "foraging",
+    "category": "food",
+    "title": "Safe Foraging",
+    "priority": "important",
+    "tags": ["food", "foraging", "plants", "wild", "edible", "survival"]
+  },
+  {
+    "id": "food-preservation",
+    "category": "food",
+    "title": "Food Preservation",
+    "priority": "important",
+    "tags": ["food", "preservation", "drying", "curing", "smoking", "storage"]
+  },
+  {
+    "id": "emergency-shelter",
+    "category": "shelter",
+    "title": "Emergency Shelter",
+    "priority": "critical",
+    "tags": ["shelter", "debris", "lean-to", "survival", "warmth", "wilderness"]
+  },
+  {
+    "id": "hygiene",
+    "category": "sanitation",
+    "title": "Hygiene Without Utilities",
+    "priority": "important",
+    "tags": ["hygiene", "sanitation", "handwashing", "disease", "latrine", "clean"]
+  },
+  {
+    "id": "mental-health-crisis",
+    "category": "mental-health",
+    "title": "Crisis Mental Support",
+    "priority": "important",
+    "tags": ["mental health", "crisis", "stress", "anxiety", "grounding", "support"]
+  },
+  {
+    "id": "radio-basics",
+    "category": "communication",
+    "title": "Emergency Radio Basics",
+    "priority": "useful",
+    "tags": ["radio", "communication", "emergency", "frequency", "distress", "signal"]
+  }
 ]
