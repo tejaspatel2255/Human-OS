@@ -118,6 +118,9 @@ self.addEventListener("message", (event) => {
         cached += 1;
         if (event.source) {
           event.source.postMessage({ cached, total });
+        } else {
+          const clients = await self.clients.matchAll({ type: "window" });
+          clients.forEach(client => client.postMessage({ cached, total }));
         }
       }
     })());

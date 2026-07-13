@@ -464,8 +464,41 @@ async function initDownloadAll() {
     bar.style.width = "0%";
     const downloadingLabel = typeof t === "function" ? t("downloading") : "Downloading...";
     status.textContent = `${downloadingLabel} (0 / ${urls.length})`;
-    if (navigator.serviceWorker.controller) {
+    
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
       navigator.serviceWorker.controller.postMessage({ type: "DOWNLOAD_ALL", urls });
+    } else if (window.caches) {
+      // Fallback: download directly in the main thread using Cache Storage
+      (async () => {
+        try {
+          const cache = await caches.open("humanos-v2-content");
+          let cached = 0;
+          const total = urls.length;
+          for (const url of urls) {
+            try {
+              const response = await fetch(url, { cache: "no-store" });
+              if (response && response.ok) {
+                await cache.put(url, response.clone());
+              }
+            } catch (err) {
+              console.error("Fallback download failed for URL:", url, err);
+            }
+            cached += 1;
+            const percent = total ? Math.round((cached / total) * 100) : 0;
+            bar.style.width = `${percent}%`;
+            status.textContent = `${downloadingLabel} (${cached} / ${total})`;
+            if (cached === total) {
+              setTimeout(() => {
+                progress.hidden = true;
+                const completeLabel = typeof t === "function" ? t("download_complete") : "All articles downloaded for offline use";
+                showToast(completeLabel);
+              }, 600);
+            }
+          }
+        } catch (cacheErr) {
+          console.error("Cache Storage access failed:", cacheErr);
+        }
+      })();
     }
   });
 }
