@@ -59,5 +59,7 @@
   "category": "Catégorie",
   "priority": "Priorité",
   "ai_busy": "Le service d'IA est temporairement occupé ou limité. Veuillez patienter quelques secondes et réessayer.",
-  "ai_offline_fallback": "Vous êtes hors ligne et aucune réponse n'est en cache. Veuillez parcourir les guides statiques ci-dessous."
+  "ai_offline_fallback": "Vous êtes hors ligne et aucune réponse n'est en cache. Veuillez parcourir les guides statiques ci-dessous.",
+  "download_zip": "Télécharger le ZIP de contenu",
+  "download_project_zip": "Télécharger le ZIP de l'application"
 }

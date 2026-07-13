@@ -59,5 +59,7 @@
   "category": "Kundi",
   "priority": "Kipaumbele",
   "ai_busy": "Huduma ya AI ina shughuli nyingi au imezuiwa kwa sasa. Tafadhali subiri sekunde chache na ujaribu tena.",
-  "ai_offline_fallback": "Uko nje ya mtandao na hakuna jibu lililohifadhiwa. Tafadhali vinjari miongozo iliyo hapa chini."
+  "ai_offline_fallback": "Uko nje ya mtandao na hakuna jibu lililohifadhiwa. Tafadhali vinjari miongozo iliyo hapa chini.",
+  "download_zip": "Pakua ZIP ya Maudhui",
+  "download_project_zip": "Pakua ZIP ya Programu"
 }

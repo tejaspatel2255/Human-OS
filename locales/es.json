@@ -59,5 +59,7 @@
   "category": "Categoría",
   "priority": "Prioridad",
   "ai_busy": "El servicio de IA está temporalmente ocupado o tiene el límite de velocidad excedido. Espere unos segundos e inténtelo de nuevo.",
-  "ai_offline_fallback": "Está sin conexión y no existe ninguna respuesta guardada. Explore las guías estáticas a continuación."
+  "ai_offline_fallback": "Está sin conexión y no existe ninguna respuesta guardada. Explore las guías estáticas a continuación.",
+  "download_zip": "Descargar ZIP de contenido",
+  "download_project_zip": "Descargar ZIP de la aplicación"
 }

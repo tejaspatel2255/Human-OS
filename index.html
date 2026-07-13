@@ -75,7 +75,11 @@
 
       <section id="personal-stats" class="home-personal-stats" aria-label="Personal stats"></section>
 
-      <button id="download-all-btn" type="button">📥 <span data-i18n="download_all">Download All for Offline</span></button>
+      <div class="download-btn-group">
+        <button id="download-all-btn" type="button">📥 <span data-i18n="download_all">Download All for Offline</span></button>
+        <a href="/humanos-content.zip" download="humanos-content.zip" class="download-link-btn">📦 <span data-i18n="download_zip">Download Content ZIP</span></a>
+        <a href="/humanos-project.zip" download="humanos-project.zip" class="download-link-btn">💻 <span data-i18n="download_project_zip">Download App ZIP</span></a>
+      </div>
 
       <div id="download-progress" class="download-progress" hidden>
         <div id="download-bar" class="download-progress__fill"></div>

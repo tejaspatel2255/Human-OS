@@ -16,6 +16,8 @@ const STATIC_ASSETS = [
   "/assets/js/analytics.js",
   "/assets/js/stats-widget.js",
   "/assets/icons/logo.png",
+  "/humanos-content.zip",
+  "/humanos-project.zip",
   "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"
 ];
 

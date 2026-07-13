@@ -16,11 +16,11 @@ This project exists for people who may need life-saving information when the int
 
 ```text
 ┌──────────────────────────────────────┐
-│ 🌍 HumanOS      ● Offline    ⚙️ 🌓 Aa │
+│ 🌍 HumanOS    ● Offline    ⚙️ 🌓 Aa │
 ├──────────────────────────────────────┤
 │ 🆘 EMERGENCY FIRST AID               │
 ├──────────────────────────────────────┤
-│ 📊  people helped  countries  AI      │
+│ 📊  people helped  countries  AI     │
 │ 🔎 Search survival guides...         │
 │ [Emergency] [Medicine] [Water] ...   │
 │                                      │

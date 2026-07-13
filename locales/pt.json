@@ -59,5 +59,7 @@
   "category": "Categoria",
   "priority": "Prioridade",
   "ai_busy": "O serviço de IA está temporariamente ocupado ou limitado. Aguarde alguns segundos e tente novamente.",
-  "ai_offline_fallback": "Você está offline e não há resposta armazenada. Navegue pelos guias estáticos abaixo."
+  "ai_offline_fallback": "Você está offline e não há resposta armazenada. Navegue pelos guias estáticos abaixo.",
+  "download_zip": "Baixar ZIP do Conteúdo",
+  "download_project_zip": "Baixar ZIP do Aplicativo"
 }

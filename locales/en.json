@@ -22,6 +22,8 @@
   "download_all": "Download All for Offline",
   "downloading": "Downloading...",
   "download_complete": "All articles saved. Ready for offline use!",
+  "download_zip": "Download Content ZIP",
+  "download_project_zip": "Download App ZIP",
   "bookmarks": "Bookmarks",
   "history": "Reading History",
   "settings": "Settings",
